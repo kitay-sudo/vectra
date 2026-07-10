@@ -1,32 +1,32 @@
-# VECTRA-013: Prompt Interfaces
+# VECTRA-013: Промпт-интерфейсы
 
-**Status:** Draft · **Version:** 0.1.0 · **Normative:** Optional
+**Статус:** Черновик · **Версия:** 0.1.0 · **Нормативный:** Опционально
 
-## Purpose
+## Назначение
 
-Define prompts as replaceable adapters into VECTRA artifacts and transitions. Prompts do not constitute the operating system.
+Определить промпты как заменяемые адаптеры к артефактам и сменам состояния VECTRA. Промпты не составляют операционную систему.
 
-## Definitions
+## Определения
 
-- **Prompt interface:** model-facing instruction that selects a role or workflow transition.
-- **Prompt contract:** declared inputs, expected structured outputs, and failure behavior.
-- **Model variance:** change in output caused by model, settings, or context differences.
+- **Промпт-интерфейс:** обращённая к модели инструкция, выбирающая роль или смену состояния рабочего цикла.
+- **Контракт промпта:** объявленные входы, ожидаемые структурированные выходы и поведение при отказе.
+- **Вариативность модели:** изменение выхода, вызванное различиями модели, настроек или контекста.
 
-## Rules
+## Правила
 
-Prompts MUST reference authoritative artifacts rather than duplicate durable rules. A prompt MUST identify its version, role, required inputs, output schema, authority boundary, and stop behavior. Prompt changes affecting project behavior MUST be reviewed and versioned. Hidden chain-of-thought MUST NOT be required as acceptance evidence; observable rationale and sources MAY be required.
+Промпты ОБЯЗАНЫ ссылаться на авторитетные артефакты, а не дублировать устойчивые правила. Промпт ОБЯЗАН указывать свою версию, роль, требуемые входы, схему выхода, границу полномочий и поведение остановки. Изменения промптов, влияющие на поведение проекта, ОБЯЗАНЫ проходить проверку и версионироваться. Скрытую цепочку рассуждений ЗАПРЕЩЕНО требовать как свидетельство для приёмки; наблюдаемое обоснование и источники требовать МОЖЕТ быть уместно.
 
-## Responsibilities
+## Ответственность
 
-Prompt authors maintain interface clarity. Workflow owners ensure prompts match current state transitions. Testers evaluate representative inputs, failure cases, and model variance. Owners approve prompts that can trigger material action.
+Авторы промптов поддерживают ясность интерфейса. Владельцы рабочего цикла обеспечивают соответствие промптов текущим сменам состояния. Тестировщики оценивают репрезентативные входы, случаи отказа и вариативность модели. Владельцы утверждают промпты, способные запускать значимое действие.
 
-## Workflow
+## Процесс
 
-Identify the transition; define structured input and output; link governing specifications; add uncertainty and stop fields; test across intended models; compare outputs against success contracts; version; monitor failures; retire when the workflow changes.
+Определить смену состояния; определить структурированные вход и выход; связать управляющие спецификации; добавить поля неопределённости и остановки; протестировать на предполагаемых моделях; сравнить выходы с контрактами успеха; версионировать; отслеживать отказы; выводить из эксплуатации при изменении рабочего цикла.
 
-## Example
+## Пример
 
-Minimal interface:
+Минимальный интерфейс:
 
 ```yaml
 interface: task-review
@@ -38,16 +38,16 @@ authority: recommend-only
 stop_if: [missing_success_contract, unverifiable_evidence]
 ```
 
-## Anti-patterns
+## Антипаттерны
 
-- Copying the constitution into every prompt.
-- Prompt tuning used to hide missing project knowledge.
-- Requiring a specific model's private reasoning format.
+- Копирование конституции в каждый промпт.
+- Подстройка промптов, используемая для сокрытия отсутствующего знания проекта.
+- Требование приватного формата рассуждений конкретной модели.
 
-## Best practices
+## Лучшие практики
 
-Prefer structured outputs, test prompts as interfaces, keep model-specific optimization in profiles, and move repeated durable content into canonical artifacts.
+Предпочитать структурированные выходы, тестировать промпты как интерфейсы, держать оптимизацию под конкретную модель в профилях и переносить повторяющееся устойчивое содержимое в канонические артефакты.
 
-## Related specifications
+## Связанные спецификации
 
-[VECTRA-000](VECTRA-000-manifest.md), [VECTRA-005](VECTRA-005-agent-protocol.md), and [VECTRA-009](VECTRA-009-context-engineering.md).
+[VECTRA-000](VECTRA-000-manifest.md), [VECTRA-005](VECTRA-005-agent-protocol.md) и [VECTRA-009](VECTRA-009-context-engineering.md).

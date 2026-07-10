@@ -1,45 +1,45 @@
 ---
 id: PROJECT
-title: "[project name]"
+title: "[название проекта]"
 status: active
-owner: "[accountable human]"
+owner: "[ответственный человек]"
 vectra_version: 0.1.0
 last_verified: YYYY-MM-DD
 ---
 
-# Project contract
+# Контракт проекта
 
-## Purpose and users
+## Назначение и пользователи
 
-[Outcome, beneficiaries, and evidence that the project matters.]
+[Результат, выгодоприобретатели и свидетельство того, что проект важен.]
 
-## Goals and success measures
+## Цели и меры успеха
 
-| Goal | Measure | Target | Evidence source |
+| Цель | Мера | Целевое значение | Источник свидетельства |
 |---|---|---|---|
 
-## Non-goals
+## Не-цели
 
-[Explicit exclusions.]
+[Явные исключения.]
 
-## Constraints and policies
+## Ограничения и политики
 
-[Time, cost, technical, legal, privacy, safety, and quality boundaries.]
+[Границы по времени, стоимости, технике, праву, приватности, безопасности и качеству.]
 
-## Authority map
+## Карта полномочий
 
-| Action class | Agent may act | Approval authority |
+| Класс действия | Агент может действовать | Полномочие на одобрение |
 |---|---|---|
 
-## Sources of truth
+## Источники правды
 
-| Subject | Canonical artifact | Owner | Freshness trigger |
+| Предмет | Канонический артефакт | Владелец | Триггер актуальности |
 |---|---|---|---|
 
-## Definition of Done
+## Критерии готовности
 
-[Project-level exit criteria and required evidence.]
+[Критерии выхода уровня проекта и требуемые свидетельства.]
 
-## Operating cadence
+## Ритм работы
 
-[Task selection, review, release, memory, and retrospective cadence.]
+[Ритм выбора задач, ревью, релизов, памяти и ретроспектив.]

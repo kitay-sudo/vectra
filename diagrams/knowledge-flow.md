@@ -1,13 +1,13 @@
-# Knowledge flow
+# Поток знаний
 
 ```mermaid
 flowchart LR
-  S["Source"] --> P["Provenance"]
-  P --> V["Validation"]
-  V --> N["Canonical node"]
-  N --> L["Typed relations"]
-  L --> U["Use in context"]
-  U --> F["Freshness trigger"]
-  F -->|valid| N
-  F -->|changed| X["Supersede or archive"]
+  S["Источник"] --> P["Происхождение"]
+  P --> V["Проверка"]
+  V --> N["Канонический узел"]
+  N --> L["Типизированные связи"]
+  L --> U["Использование в контексте"]
+  U --> F["Триггер свежести"]
+  F -->|актуально| N
+  F -->|изменилось| X["Заместить или архивировать"]
 ```

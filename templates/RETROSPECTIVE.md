@@ -1,24 +1,24 @@
 ---
 id: RETRO-NNN
-period: "[release/incident/date range]"
-owner: "[facilitator]"
+period: "[релиз/инцидент/диапазон дат]"
+owner: "[фасилитатор]"
 ---
 
-# Retrospective: [scope]
+# Ретроспектива: [границы]
 
-## Expected versus observed
+## Ожидаемое против наблюдаемого
 
-[Measures, evidence, and material variance.]
+[Меры, свидетельства и существенное расхождение.]
 
-## Contributing system conditions
+## Способствующие системные условия
 
-[Processes, incentives, context, tools, and assumptions; avoid blame.]
+[Процессы, стимулы, контекст, инструменты и допущения; без обвинений.]
 
-## Continue / change / investigate
+## Продолжить / изменить / исследовать
 
-| Action | Evidence | Owner | Success signal | Review date |
+| Действие | Свидетельство | Владелец | Сигнал успеха | Дата пересмотра |
 |---|---|---|---|---|
 
-## Knowledge updates
+## Обновления знаний
 
-[Rules, contracts, tests, risks, or memory changed because of learning.]
+[Правила, контракты, тесты, риски или память, изменённые из-за усвоенного.]

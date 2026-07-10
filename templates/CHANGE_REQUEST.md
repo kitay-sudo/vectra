@@ -1,26 +1,26 @@
 ---
 id: CR-NNN
 status: proposed
-requester: "[actor]"
-decision_authority: "[owner]"
+requester: "[актор]"
+decision_authority: "[владелец]"
 date: YYYY-MM-DD
 ---
 
-# [Requested outcome change]
+# [Запрошенное изменение результата]
 
-## Current baseline and reason
+## Текущая база и причина
 
-[Current contract, new evidence/need, urgency.]
+[Текущий контракт, новое свидетельство/потребность, срочность.]
 
-## Proposed change
+## Предлагаемое изменение
 
-[Goals, scope, acceptance criteria, migration and compatibility.]
+[Цели, границы, критерии приёмки, миграция и совместимость.]
 
-## Impact analysis
+## Анализ влияния
 
-| Area | Impact | Risk | Validation/owner |
+| Область | Влияние | Риск | Проверка/владелец |
 |---|---|---|---|
 
-## Decision
+## Решение
 
-[Approve/reject/defer, authority, rationale, conditions, related DR/tasks.]
+[Одобрить/отклонить/отложить, полномочия, обоснование, условия, связанные DR/задачи.]

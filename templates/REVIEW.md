@@ -1,27 +1,27 @@
 ---
 id: REVIEW-NNN
 status: complete
-reviewer: "[independent actor where required]"
+reviewer: "[независимый актор, где требуется]"
 date: YYYY-MM-DD
-subject: "[task/change]"
+subject: "[задача/изменение]"
 ---
 
-# Review: [subject]
+# Ревью: [предмет]
 
-## Scope and independence
+## Границы и независимость
 
-[Reviewed artifacts, exclusions, reviewer conflicts.]
+[Проверенные артефакты, исключения, конфликты ревьюера.]
 
-## Evidence matrix
+## Матрица свидетельств
 
-| Criterion | Evidence inspected | Result | Confidence |
+| Критерий | Проверенное свидетельство | Результат | Уверенность |
 |---|---|---|---|
 
-## Findings
+## Находки
 
-| Severity | Reproducible finding | Required disposition |
+| Серьёзность | Воспроизводимая находка | Требуемое распоряжение |
 |---|---|---|
 
-## Verdict
+## Вердикт
 
-[Accept, rework, or escalate; residual risks and acceptance authority.]
+[Принять, доработать или эскалировать; остаточные риски и принимающий приёмку.]

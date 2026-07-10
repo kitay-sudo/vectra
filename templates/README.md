@@ -1,5 +1,7 @@
-# Operational templates
+# Операционные шаблоны
 
-Copy only the records a project needs. Replace bracketed guidance before acceptance; brackets are schema instructions, not project placeholders. Stable IDs SHOULD use `TYPE-NNN`, dates use ISO 8601, and every record links its parent goal or task.
+Копируйте только те записи, которые нужны проекту. Замените указания в квадратных скобках до приёмки; скобки — это инструкции схемы, а не проектные плейсхолдеры. Устойчивые идентификаторы СЛЕДУЕТ давать в виде `TYPE-NNN`, даты — по ISO 8601, и каждая запись ссылается на родительскую цель или задачу.
 
-Core: `PROJECT`, `TASK`, `MEMORY`, `DECISION`, `STATUS`. Conditional: `QUESTION`, `SPECIFICATION`, `MEETING`, `RETROSPECTIVE`, `RESEARCH`, `BUG_REPORT`, `CHANGE_REQUEST`, `RISK`, `REVIEW`.
+`AGENTS.md` — правила агента; они устанавливаются в проект как `vectra/AGENTS.md`. Это обязательный файл рядом с ядром (`PROJECT`, `TASK`, `MEMORY`, `DECISION`, `STATUS`).
+
+Ядро: `PROJECT`, `TASK`, `MEMORY`, `DECISION`, `STATUS`. Условные: `QUESTION`, `SPECIFICATION`, `MEETING`, `RETROSPECTIVE`, `RESEARCH`, `BUG_REPORT`, `CHANGE_REQUEST`, `RISK`, `REVIEW`.

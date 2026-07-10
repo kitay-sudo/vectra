@@ -1,23 +1,23 @@
 ---
 as_of: YYYY-MM-DDTHH:MM:SSZ
-owner: "[coordinator]"
+owner: "[координатор]"
 ---
 
-# Project status
+# Статус проекта
 
-## Outcome state
+## Состояние результата
 
-[What is observably different since the last status.]
+[Что наблюдаемо изменилось с прошлого статуса.]
 
-## Active work
+## Активная работа
 
-| Task | State | Owner | Evidence/next gate |
+| Задача | Состояние | Владелец | Свидетельство/следующий шлюз |
 |---|---|---|---|
 
-## Decisions and risks
+## Решения и риски
 
-[New decisions, blocks, risk movement, and required authority.]
+[Новые решения, блокировки, движение рисков и требуемые полномочия.]
 
-## Next action
+## Следующее действие
 
-[Highest-priority ready action; link canonical task rather than duplicate its plan.]
+[Готовое действие высшего приоритета; сослаться на каноническую задачу, а не дублировать её план.]

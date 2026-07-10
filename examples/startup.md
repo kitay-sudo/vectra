@@ -1,7 +1,7 @@
-# Startup profile
+# Профиль стартапа
 
-**Goal:** validate paid demand for a scheduling product. **Authority:** founder owns priority, spending, claims, and launch; agents may research and build reversible prototypes. **Roles:** Planner coordinates Researcher, Designer, Developer, and Reviewer.
+**Цель:** валидировать платный спрос на продукт для планирования расписаний. **Полномочия:** основатель владеет приоритетом, расходами, заявлениями и запуском; агенты могут исследовать и создавать обратимые прототипы. **Роли:** Планировщик координирует Исследователя, Дизайнера, Разработчика и Ревьюера.
 
-Each loop tests one riskiest premise. A research task produces evidence; a decision selects an experiment; implementation is bounded; metrics and interviews validate the outcome; memory records only supported learning. Stop on ambiguous consent, unapproved spend, or a change to the target customer. Done is a predefined conversion threshold plus documented retention and support feasibility—not “prototype shipped.”
+Каждый цикл проверяет одну самую рискованную предпосылку. Исследовательская задача производит свидетельство; решение выбирает эксперимент; реализация ограничена; метрики и интервью валидируют исход; память фиксирует только подтверждённые уроки. Остановиться при неоднозначном согласии, неутверждённых расходах или изменении целевого клиента. Готово — это заранее заданный порог конверсии плюс задокументированная осуществимость удержания и поддержки, а не «прототип выпущен».
 
-Anti-pattern: silently rewriting the product goal after weak results.
+Антипаттерн: молча переписывать цель продукта после слабых результатов.

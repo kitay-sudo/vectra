@@ -1,7 +1,7 @@
-# Marketing profile
+# Профиль маркетинга
 
-**Goal:** test an onboarding campaign for opted-in users. **Authority:** marketing owner approves segmentation and claims; privacy owner approves data use; Analyst defines measurement before launch.
+**Цель:** протестировать кампанию онбординга для согласившихся пользователей. **Полномочия:** владелец маркетинга утверждает сегментацию и заявления; владелец конфиденциальности утверждает использование данных; Аналитик определяет измерение до запуска.
 
-The loop creates one hypothesis, freezes audience and success metric, reviews claims and consent, runs a bounded experiment, validates delivery and attribution, then records the decision. Failure conditions include consent ambiguity, misleading claims, instrumentation drift, or missing suppression controls.
+Цикл создаёт одну гипотезу, замораживает аудиторию и метрику успеха, проверяет заявления и согласие, проводит ограниченный эксперимент, валидирует доставку и атрибуцию, затем фиксирует решение. Условия отказа включают неоднозначность согласия, вводящие в заблуждение заявления, дрейф инструментирования или отсутствие средств исключения.
 
-Anti-pattern: choosing the winning metric after observing results.
+Антипаттерн: выбирать победившую метрику после наблюдения результатов.

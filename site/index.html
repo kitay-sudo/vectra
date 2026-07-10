@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Vectra — открытый операционный framework для инженеров, работающих с AI-агентами.">
   <meta name="theme-color" content="#ffffff">
-  <title>Vectra — AI Project Operating System</title>
+  <title>Vectra — операционная система проекта для работы с AI</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -31,18 +31,19 @@
     <nav aria-label="Основная навигация">
       <a href="#how">Как работает</a>
       <a href="#engineers">Инженерам</a>
+      <a href="#install">Установка</a>
       <a href="#start">Начать</a>
     </nav>
-    <a class="button button-small" href="#start">Запустить</a>
+    <a class="button button-small" href="#install">Запустить</a>
   </header>
 
   <main id="top">
     <section class="hero shell">
-      <div class="eyebrow"><span></span> Open framework for engineers · v0.1.0</div>
+      <div class="eyebrow"><span></span> Открытый фреймворк для инженеров · v0.1.0</div>
       <h1>Проект помнит.<br>Агент продолжает.</h1>
       <p class="lead">Vectra — операционная система для инженеров, которые строят проекты вместе с AI-агентами. Она превращает разрозненные чаты в воспроизводимый процесс с контекстом, проверками, решениями и памятью внутри репозитория.</p>
       <div class="actions">
-        <a class="button" href="#start">Начать с Vectra</a>
+        <a class="button" href="#install">Установить в проект</a>
         <a class="text-link" href="#how">Посмотреть процесс <span>↘</span></a>
       </div>
       <div class="hero-card" aria-label="Цикл работы Vectra">
@@ -150,6 +151,45 @@
 
     <div class="section-divider shell" aria-hidden="true"><span>05</span><i></i><b>Запуск</b></div>
 
+    <section id="install" class="section shell">
+      <div class="section-head">
+        <p class="kicker">Установка</p>
+        <h2>Одна строка. Только рабочие документы.</h2>
+        <p class="section-intro">Команда приносит в проект контракт, память, правила агента и шаблоны записей. Диаграммы, лендинг, примеры и спецификации остаются здесь — они описывают стандарт, а не участвуют в работе.</p>
+      </div>
+
+      <div class="prompt-card" id="install-card">
+        <div class="prompt-top"><span>Терминал · macOS / Linux</span><button class="copy" data-copy="install-sh"><svg class="icon"><use href="#i-copy"/></svg><span class="copy-label">Скопировать</span><span>⌘C</span></button></div>
+        <pre><code id="install-sh">curl -fsSL https://raw.githubusercontent.com/kitay-sudo/vectra/main/install.sh | sh</code></pre>
+      </div>
+
+      <div class="prompt-card" id="install-ps-card" style="margin-top:16px">
+        <div class="prompt-top"><span>PowerShell · Windows</span><button class="copy" data-copy="install-ps"><svg class="icon"><use href="#i-copy"/></svg><span class="copy-label">Скопировать</span><span>⌘C</span></button></div>
+        <pre><code id="install-ps">irm https://raw.githubusercontent.com/kitay-sudo/vectra/main/install.ps1 | iex</code></pre>
+      </div>
+
+      <div class="memory" style="margin-top:16px">
+        <div>
+          <p class="kicker">Попадает в проект</p>
+          <div class="memory-list">
+            <div><svg class="icon"><use href="#i-file"/></svg><code>PROJECT.md</code><p>Цели, ограничения, полномочия, критерии готовности.</p></div>
+            <div><svg class="icon"><use href="#i-database"/></svg><code>MEMORY.md</code><p>Проверенные знания и повторяющиеся уроки.</p></div>
+            <div><svg class="icon"><use href="#i-shield"/></svg><code>vectra/AGENTS.md</code><p>Правила агента: цикл, полномочия, приёмка.</p></div>
+            <div><svg class="icon"><use href="#i-folder"/></svg><code>tasks/ · decisions/</code><p>Записи задач и решений плюс их шаблоны.</p></div>
+          </div>
+        </div>
+        <div>
+          <p class="kicker">Остаётся в стандарте</p>
+          <div class="memory-list">
+            <div><svg class="icon"><use href="#i-route"/></svg><code>diagrams/ · site/</code><p>Иллюстрируют Vectra и её лендинг.</p></div>
+            <div><svg class="icon"><use href="#i-file"/></svg><code>docs/specs/</code><p>Полный норматив; выжимка уже в AGENTS.md.</p></div>
+            <div><svg class="icon"><use href="#i-terminal"/></svg><code>examples/</code><p>Доменные профили для чтения, не для копирования.</p></div>
+            <div><svg class="icon"><use href="#i-refresh"/></svg><code>.github/ · scripts/</code><p>CI и проверки самого репозитория.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="start" class="section start shell">
       <div class="section-head">
         <p class="kicker">Быстрый старт</p>
@@ -199,11 +239,11 @@
   </main>
 
   <footer class="footer shell">
-    <div class="footer-project"><a class="brand" href="#top">Vectra<span>.</span></a><p>AI Project Operating System · v0.1.0</p></div>
+    <div class="footer-project"><a class="brand" href="#top">Vectra<span>.</span></a><p>Операционная система проекта для работы с AI · v0.1.0</p></div>
     <div class="author">
       <span>Автор · Kitay9</span>
+      <a href="https://github.com/kitay-sudo/vectra" target="_blank" rel="noreferrer"><svg class="icon"><use href="#i-github"/></svg>Репозиторий ↗</a>
       <a href="https://t.me/kitay9" target="_blank" rel="noreferrer"><svg class="icon"><use href="#i-send"/></svg>Telegram ↗</a>
-      <a href="https://github.com/kitay-sudo" target="_blank" rel="noreferrer"><svg class="icon"><use href="#i-github"/></svg>GitHub ↗</a>
     </div>
     <a class="to-top" href="#top">Наверх ↑</a>
   </footer>

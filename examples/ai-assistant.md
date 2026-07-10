@@ -1,7 +1,7 @@
-# AI assistant profile
+# Профиль ИИ-ассистента
 
-**Goal:** answer internal policy questions with citations and abstain when evidence is insufficient. **Roles:** Knowledge Curator owns sources; Developer owns retrieval; Tester owns evaluation; policy owner accepts risk.
+**Цель:** отвечать на вопросы по внутренним политикам со ссылками на источники и воздерживаться, когда свидетельств недостаточно. **Роли:** Куратор знаний владеет источниками; Разработчик владеет извлечением; Тестировщик владеет оценкой; владелец политик принимает риск.
 
-The success contract defines a frozen evaluation set, citation correctness, abstention recall, latency, privacy, and adversarial cases. Prompt interfaces are versioned adapters; policy sources and evaluation evidence are canonical. Each failure is classified as retrieval, source, instruction, generation, or evaluation debt before the next iteration.
+Контракт успеха определяет замороженный набор для оценки, корректность ссылок на источники, полноту воздержаний, задержку, конфиденциальность и состязательные случаи. Промпт-интерфейсы — версионируемые адаптеры; источники политик и свидетельства оценки каноничны. Каждый отказ классифицируется как долг извлечения, источника, инструкции, генерации или оценки до следующей итерации.
 
-Anti-pattern: optimizing only fluent answers or storing policy truth inside the system prompt.
+Антипаттерн: оптимизировать только беглость ответов или хранить истину политик внутри системного промпта.

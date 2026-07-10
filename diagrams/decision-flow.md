@@ -1,13 +1,13 @@
-# Decision flow
+# Поток решений
 
 ```mermaid
 flowchart LR
-  T["Material choice"] --> A["Identify authority"]
-  A --> K["Freeze criteria"]
-  K --> O["Compare options and evidence"]
-  O --> D{"Authorized decision"}
-  D --> R["Publish record"]
-  R --> I["Implement and validate"]
-  I -->|premise changes| S["Superseding decision"]
+  T["Значимый выбор"] --> A["Определить полномочия"]
+  A --> K["Зафиксировать критерии"]
+  K --> O["Сравнить варианты и свидетельства"]
+  O --> D{"Санкционированное решение"}
+  D --> R["Опубликовать запись"]
+  R --> I["Внедрить и проверить"]
+  I -->|предпосылка изменилась| S["Замещающее решение"]
   S --> R
 ```

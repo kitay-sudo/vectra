@@ -1,25 +1,25 @@
 ---
 id: Q-NNN
 status: open
-owner: "[answer authority]"
-blocks: "[task or transition]"
+owner: "[ответственный за ответ]"
+blocks: "[задача или переход]"
 needed_by: YYYY-MM-DD
 ---
 
-# [Smallest answerable question]
+# [Наименьший отвечаемый вопрос]
 
-## Why it matters
+## Почему это важно
 
-[Decision or action this answer changes.]
+[Решение или действие, которое меняет этот ответ.]
 
-## Known context
+## Известный контекст
 
-[Verified facts, sources, and prior decisions.]
+[Проверенные факты, источники и прежние решения.]
 
-## Options and default
+## Варианты и вариант по умолчанию
 
-[Safe choices, trade-offs, recommended/default behavior if authorized.]
+[Безопасные выборы, компромиссы, рекомендуемое/умолчательное поведение при наличии полномочий.]
 
-## Answer
+## Ответ
 
-[Decision, actor, date, and affected artifacts.]
+[Решение, актор, дата и затронутые артефакты.]

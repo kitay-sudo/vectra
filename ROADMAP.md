@@ -1,25 +1,25 @@
-# Roadmap
+# Дорожная карта
 
-The roadmap expresses intent, not commitment. Changes require a decision record.
+Дорожная карта выражает намерение, а не обязательство. Изменения требуют записи решения.
 
-## v0.2 — Field validation
+## v0.2 — Полевая проверка
 
-- Run at least five public conformance exercises across software and non-software projects.
-- Publish machine-readable artifact schemas.
-- Define minimal and regulated-project profiles.
+- Провести не менее пяти публичных упражнений на соответствие для программных и непрограммных проектов.
+- Опубликовать машиночитаемые схемы артефактов.
+- Определить минимальный профиль и профиль регулируемого проекта.
 
-## v0.3 — Tool interoperability
+## v0.3 — Совместимость инструментов
 
-- Define event and handoff formats.
-- Add reference adapters for common agent environments.
-- Publish conformance test fixtures.
+- Определить форматы событий и передачи работы.
+- Добавить эталонные адаптеры для распространённых сред агентов.
+- Опубликовать тестовые фикстуры соответствия.
 
-## v1.0 — Stable core
+## v1.0 — Стабильное ядро
 
-- Freeze Core terms and lifecycle transitions.
-- Publish governance and compatibility guarantees.
-- Require evidence from at least three independent implementations.
+- Зафиксировать термины ядра и переходы жизненного цикла.
+- Опубликовать гарантии управления и совместимости.
+- Требовать свидетельства не менее чем от трёх независимых реализаций.
 
-## Non-goals
+## Не-цели
 
-Vectra will not prescribe a model vendor, project-management product, software stack, or autonomous decision authority.
+Vectra не предписывает поставщика модели, продукт для управления проектами, программный стек или полномочия на автономные решения.

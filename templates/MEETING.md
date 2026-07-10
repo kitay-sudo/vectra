@@ -1,29 +1,29 @@
 ---
 id: MEETING-NNN
 date: YYYY-MM-DD
-facilitator: "[name]"
+facilitator: "[имя]"
 participants: []
 ---
 
-# [Meeting purpose]
+# [Цель встречи]
 
-## Decision or outcome sought
+## Искомое решение или результат
 
-[Why synchronous coordination is necessary.]
+[Почему необходима синхронная координация.]
 
-## Inputs
+## Входные материалы
 
-[Pre-read, evidence, proposals, and constraints.]
+[Материалы для предварительного чтения, свидетельства, предложения и ограничения.]
 
-## Outcomes
+## Результаты
 
-| Type | Statement | Owner | Due/artifact |
+| Тип | Формулировка | Владелец | Срок/артефакт |
 |---|---|---|---|
 
-## Unresolved items
+## Нерешённые вопросы
 
-[Questions and escalation path.]
+[Вопросы и путь эскалации.]
 
-## Record updates
+## Обновления записей
 
-[Decision/task/memory links. Meeting notes are not a substitute for canonical updates.]
+[Ссылки на решения/задачи/память. Заметки встречи не заменяют канонические обновления.]

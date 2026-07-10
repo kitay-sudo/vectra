@@ -1,26 +1,26 @@
 ---
 id: RESEARCH-NNN
 status: active
-question: "[decision-relevant question]"
-owner: "[researcher]"
+question: "[вопрос, значимый для решения]"
+owner: "[исследователь]"
 as_of: YYYY-MM-DD
 ---
 
-# [Research title]
+# [Название исследования]
 
-## Decision context and scope
+## Контекст решения и границы
 
-[What decision this informs; source, time, geography, and depth boundaries.]
+[Какое решение это информирует; границы по источникам, времени, географии и глубине.]
 
-## Method and sources
+## Метод и источники
 
-| Source | Type/authority | Date accessed | Limitations |
+| Источник | Тип/полномочия | Дата обращения | Ограничения |
 |---|---|---|---|
 
-## Findings
+## Выводы
 
-[Separate facts, inferences, and unknowns; cite every consequential claim.]
+[Разделять факты, выводы и неизвестное; ссылаться на каждое значимое утверждение.]
 
-## Options and recommendation
+## Варианты и рекомендация
 
-[Criteria, comparison, confidence, counter-evidence, and verification needs.]
+[Критерии, сравнение, уверенность, контрсвидетельства и потребности в проверке.]

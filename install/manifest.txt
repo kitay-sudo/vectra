@@ -1,0 +1,33 @@
+# Манифест установки Vectra.
+#
+# Единственный источник правды о том, какие файлы попадают в проект.
+# Его читают install.sh, install.ps1 и scripts/validate_docs.py.
+#
+# Формат строки:  <профиль><TAB><источник в репозитории><TAB><назначение в проекте>
+#
+# Профили:
+#   core — минимальный рабочий набор: контракт проекта, память, правила агента
+#          и шаблоны трёх записей, которые создаются в каждой итерации.
+#   full — всё из core плюс условные шаблоны для проектов, которым они нужны.
+#
+# Сюда НИКОГДА не попадают: diagrams/, site/, examples/, docs/, .github/,
+# scripts/, CHANGELOG.md, ROADMAP.md, CONTRIBUTING.md. Это материалы,
+# описывающие сам стандарт, а не рабочие документы проекта.
+
+core	VERSION	vectra/VERSION
+core	templates/AGENTS.md	vectra/AGENTS.md
+core	templates/PROJECT.md	PROJECT.md
+core	templates/MEMORY.md	MEMORY.md
+core	templates/TASK.md	vectra/templates/TASK.md
+core	templates/DECISION.md	vectra/templates/DECISION.md
+core	templates/STATUS.md	vectra/templates/STATUS.md
+
+full	templates/QUESTION.md	vectra/templates/QUESTION.md
+full	templates/SPECIFICATION.md	vectra/templates/SPECIFICATION.md
+full	templates/MEETING.md	vectra/templates/MEETING.md
+full	templates/RETROSPECTIVE.md	vectra/templates/RETROSPECTIVE.md
+full	templates/RESEARCH.md	vectra/templates/RESEARCH.md
+full	templates/BUG_REPORT.md	vectra/templates/BUG_REPORT.md
+full	templates/CHANGE_REQUEST.md	vectra/templates/CHANGE_REQUEST.md
+full	templates/RISK.md	vectra/templates/RISK.md
+full	templates/REVIEW.md	vectra/templates/REVIEW.md

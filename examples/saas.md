@@ -1,7 +1,7 @@
-# SaaS profile
+# Профиль SaaS
 
-**Goal:** add organization-level audit export without violating tenant isolation. **Authority:** product owner accepts scope; security owner approves data exposure; release owner approves production rollout. **Roles:** Architect, Developer, Tester, Security Reviewer, Memory Manager.
+**Цель:** добавить экспорт аудита на уровне организации без нарушения изоляции арендаторов. **Полномочия:** владелец продукта принимает границы; владелец безопасности утверждает раскрытие данных; владелец релиза утверждает развёртывание в продакшене. **Роли:** Архитектор, Разработчик, Тестировщик, Ревьюер безопасности, Менеджер памяти.
 
-Success requires authorization tests, cross-tenant negative tests, schema compatibility, performance threshold, operator runbook, rollback, and staged monitoring. The loop cannot pass review while a critical security finding is open. Decisions record retention format and backward compatibility; memory records verified platform constraints.
+Успех требует тестов авторизации, межарендаторных негативных тестов, совместимости схемы, порога производительности, операционного руководства, отката и поэтапного мониторинга. Цикл не может пройти проверку, пока открыта критическая находка безопасности. Решения фиксируют формат хранения и обратную совместимость; память фиксирует проверенные ограничения платформы.
 
-Anti-pattern: treating a green happy-path test as validation of tenant safety.
+Антипаттерн: считать зелёный тест счастливого пути валидацией безопасности арендаторов.

@@ -1,7 +1,7 @@
-# Telegram bot profile
+# Профиль Telegram-бота
 
-**Goal:** deliver appointment reminders through a Telegram bot. **Context:** platform rate limits, webhook security, user locale, and deletion policy are volatile facts with verification dates. **Authority:** owner approves message copy and personal-data handling; agent may implement and test locally.
+**Цель:** доставлять напоминания о встречах через Telegram-бот. **Контекст:** лимиты запросов платформы, безопасность вебхуков, локаль пользователя и политика удаления — это изменчивые факты с датами проверки. **Полномочия:** владелец утверждает текст сообщений и обработку персональных данных; агент может реализовывать и тестировать локально.
 
-Iterations: validate bot interaction states; implement one state transition; test duplicate updates and retries; review consent and error copy; update known platform behavior. Success evidence includes idempotency, timezone boundaries, rate-limit recovery, secret handling, and a tested disable path.
+Итерации: валидировать состояния взаимодействия бота; реализовать одну смену состояния; протестировать дублирующиеся обновления и повторные попытки; проверить согласие и текст ошибок; обновить известное поведение платформы. Свидетельства успеха включают идемпотентность, границы часовых поясов, восстановление после лимитов запросов, работу с секретами и протестированный путь отключения.
 
-Anti-pattern: copying a bot token into `MEMORY.md` or task logs.
+Антипаттерн: копировать токен бота в `MEMORY.md` или журналы задач.

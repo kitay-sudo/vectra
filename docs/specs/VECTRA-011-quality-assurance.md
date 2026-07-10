@@ -1,53 +1,53 @@
-# VECTRA-011: Quality Assurance
+# VECTRA-011: Обеспечение качества
 
-**Status:** Draft · **Version:** 0.1.0 · **Normative:** Yes
+**Статус:** Черновик · **Версия:** 0.1.0 · **Нормативный:** Да
 
-## Purpose
+## Назначение
 
-Define risk-proportionate verification, validation, review, and recovery.
+Определить соразмерные риску верификацию, валидацию, проверку и восстановление.
 
-## Definitions
+## Определения
 
-- **Verification:** evidence that output matches its specification.
-- **Validation:** evidence that output satisfies the intended use.
-- **Finding:** reproducible deviation with impact and evidence.
-- **Residual risk:** known risk remaining after controls.
+- **Верификация:** свидетельство того, что выход соответствует своей спецификации.
+- **Валидация:** свидетельство того, что выход удовлетворяет предполагаемому применению.
+- **Замечание:** воспроизводимое отклонение с оценкой воздействия и свидетельством.
+- **Остаточный риск:** известный риск, остающийся после мер контроля.
 
-## Rules
+## Правила
 
-Claims MUST be backed by evidence appropriate to their type. Tests MUST discriminate failure, not merely execute successfully. Review depth MUST increase with impact, irreversibility, novelty, and uncertainty. Failed checks MUST remain visible. The executor MUST NOT be the only acceptance authority for high-risk work.
+Утверждения ОБЯЗАНЫ подкрепляться свидетельством, соответствующим их типу. Тесты ОБЯЗАНЫ различать отказ, а не просто успешно выполняться. Глубина проверки ОБЯЗАНА расти с воздействием, необратимостью, новизной и неопределённостью. Проваленные проверки ОБЯЗАНЫ оставаться видимыми. Исполнителю ЗАПРЕЩЕНО быть единственным принимающим приёмку для высокорисковой работы.
 
-## Responsibilities
+## Ответственность
 
-Planners define the validation strategy. Executors run self-review and preserve evidence. Testers verify observable behavior. Reviewers assess requirements, defects, risk, and process. Owners accept residual risk and authorize waivers.
+Планировщики определяют стратегию валидации. Исполнители проводят самопроверку и сохраняют свидетельства. Тестировщики верифицируют наблюдаемое поведение. Ревьюеры оценивают требования, дефекты, риск и процесс. Владельцы принимают остаточный риск и разрешают отступления.
 
-## Workflow
+## Процесс
 
-Classify risk as low, moderate, high, or critical; map each success criterion to a check; verify inputs and environment; run deterministic checks; inspect semantic quality; test negative and boundary cases; perform independent review where required; record findings by severity; repair and rerun affected plus regression checks; accept only with an evidence matrix.
+Классифицировать риск как низкий, умеренный, высокий или критический; сопоставить каждый критерий успеха с проверкой; верифицировать входы и окружение; запустить детерминированные проверки; проинспектировать смысловое качество; протестировать негативные и граничные случаи; провести независимую проверку там, где требуется; зафиксировать замечания по степени серьёзности; исправить и перезапустить затронутые и регрессионные проверки; принимать только при наличии матрицы свидетельств.
 
-Suggested review levels:
+Предлагаемые уровни проверки:
 
-| Risk | Minimum control |
+| Риск | Минимальный контроль |
 |---|---|
-| Low | executor self-review and automated checks |
-| Moderate | peer review or targeted independent check |
-| High | independent domain reviewer, rollback evidence, owner acceptance |
-| Critical | qualified review, staged release, monitoring, explicit contingency authority |
+| Низкий | самопроверка исполнителя и автоматические проверки |
+| Умеренный | коллегиальная проверка или точечная независимая проверка |
+| Высокий | независимый предметный ревьюер, свидетельство отката, приёмка владельцем |
+| Критический | квалифицированная проверка, поэтапный выпуск, мониторинг, явные полномочия на действия в непредвиденных ситуациях |
 
-## Example
+## Пример
 
-A link checker passing verifies link syntax and targets; a cold-reader exercise validates that the documentation is actually navigable. Both are needed for the stated goal.
+Успешная проверка ссылок верифицирует синтаксис ссылок и их цели; упражнение с «холодным читателем» валидирует, что документация действительно навигируема. Оба нужны для заявленной цели.
 
-## Anti-patterns
+## Антипаттерны
 
-- Equating test count with coverage.
-- Reviewer rewriting the deliverable without recording findings.
-- Waiving a failure because a deadline is near.
+- Отождествление числа тестов с покрытием.
+- Ревьюер переписывает результат, не фиксируя замечания.
+- Отмена отказа из-за приближающегося срока.
 
-## Best practices
+## Лучшие практики
 
-Capture commands and versions, test the highest-consequence failure first, use independent evidence sources, and turn escaped defects into improved contracts or checks.
+Фиксировать команды и версии, тестировать сначала самый значимый по последствиям отказ, использовать независимые источники свидетельств и превращать пропущенные дефекты в улучшенные контракты или проверки.
 
-## Related specifications
+## Связанные спецификации
 
-[VECTRA-002](VECTRA-002-workflow.md), [VECTRA-007](VECTRA-007-success-contracts.md), and [VECTRA-010](VECTRA-010-multi-agent-collaboration.md).
+[VECTRA-002](VECTRA-002-workflow.md), [VECTRA-007](VECTRA-007-success-contracts.md) и [VECTRA-010](VECTRA-010-multi-agent-collaboration.md).

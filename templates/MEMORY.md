@@ -1,27 +1,27 @@
 ---
-scope: "[project/component]"
-owner: "[memory manager]"
+scope: "[проект/компонент]"
+owner: "[владелец памяти]"
 last_verified: YYYY-MM-DD
 ---
 
-# Current project memory
+# Текущая память проекта
 
-## Stable facts
+## Устойчивые факты
 
-| Fact | Scope | Source | Last verified | Revalidate when |
+| Факт | Границы | Источник | Последняя проверка | Перепроверить когда |
 |---|---|---|---|---|
 
-## Operating constraints
+## Действующие ограничения
 
-| Constraint | Authority | Consequence | Related decision |
+| Ограничение | Полномочия | Последствие | Связанное решение |
 |---|---|---|---|
 
-## Learned practices
+## Усвоенные практики
 
-| Practice | Evidence | Applies to | Exceptions |
+| Практика | Свидетельство | Применимо к | Исключения |
 |---|---|---|---|
 
-## Superseded knowledge
+## Замещённое знание
 
-| Former claim | Superseded by | Date |
+| Прежнее утверждение | Замещено на | Дата |
 |---|---|---|

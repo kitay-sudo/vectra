@@ -1,52 +1,52 @@
-# VECTRA-005: Agent Protocol
+# VECTRA-005: Протокол агента
 
-**Status:** Draft · **Version:** 0.1.0 · **Normative:** Yes
+**Статус:** Черновик · **Версия:** 0.1.0 · **Нормативный:** Да
 
-## Purpose
+## Назначение
 
-Define a portable protocol for any AI agent entering, operating in, reporting on, pausing, and recovering a project.
+Определить переносимый протокол для любого ИИ-агента, который входит в проект, работает в нём, отчитывается о нём, приостанавливает и восстанавливает его.
 
-## Definitions
+## Определения
 
-- **Entry packet:** minimum artifacts required to begin safely.
-- **Scope envelope:** authorized files, systems, actions, time, and cost.
-- **Handoff:** checkpoint intended for a different executor.
+- **Пакет входа:** минимум артефактов, требуемых для безопасного начала.
+- **Границы задачи:** разрешённые файлы, системы, действия, время и стоимость.
+- **Передача работы:** контрольная точка, предназначенная для другого исполнителя.
 
-## Rules
+## Правила
 
-On entry, an agent MUST identify the project version, active task, owner, authority, success contract, relevant decisions, and validation method. It MUST inspect existing state before mutation. It MUST report material assumptions before relying on them. It MUST checkpoint before interruption. It MUST stop when authority, critical input, safe execution, or credible validation is unavailable.
+При входе агент ОБЯЗАН определить версию проекта, активную задачу, владельца, полномочия, контракт успеха, релевантные решения и метод валидации. Он ОБЯЗАН осмотреть существующее состояние до изменения. Он ОБЯЗАН сообщать значимые допущения до того, как опираться на них. Он ОБЯЗАН создать контрольную точку до прерывания. Он ОБЯЗАН остановиться, когда недоступны полномочия, критический вход, безопасное выполнение или достоверная валидация.
 
-## Responsibilities
+## Ответственность
 
-The entering agent builds context and declares readiness or a block. During execution it minimizes scope, preserves provenance, communicates material deviations, and maintains task state. At exit it reports outcomes, evidence, changes, residual risks, and exact next action.
+Входящий агент формирует контекст и объявляет готовность или блокировку. Во время выполнения он минимизирует границы, сохраняет происхождение, сообщает о значимых отклонениях и поддерживает состояние задачи. На выходе он сообщает результаты, свидетельства, изменения, остаточные риски и точное следующее действие.
 
-## Workflow
+## Процесс
 
-1. **Orient:** read project index, constitution, active task, memory, and decisions.
-2. **Verify:** inspect actual workspace and external state relevant to the task.
-3. **Contract:** restate outcome, constraints, acceptance, and scope envelope.
-4. **Plan:** choose the smallest valuable iteration and validation.
-5. **Act:** execute and checkpoint observable state.
-6. **Validate:** gather evidence; do not substitute confidence.
-7. **Synchronize:** update task, decision, status, and memory artifacts.
-8. **Exit:** close, hand off, or block with a precise resume condition.
+1. **Сориентироваться:** прочитать индекс проекта, конституцию, активную задачу, память и решения.
+2. **Проверить:** осмотреть фактическое рабочее пространство и внешнее состояние, релевантные задаче.
+3. **Контракт:** переформулировать результат, ограничения, приёмку и границы задачи.
+4. **План:** выбрать наименьшую ценную итерацию и валидацию.
+5. **Действие:** выполнить и зафиксировать наблюдаемое состояние в контрольной точке.
+6. **Валидация:** собрать свидетельства; не подменять их уверенностью.
+7. **Синхронизация:** обновить артефакты задачи, решения, статуса и памяти.
+8. **Выход:** закрыть, передать работу или заблокировать с точным условием возобновления.
 
-Progress reports SHOULD lead with changed state, evidence, current risk, and next action. Routine tool narration SHOULD be omitted unless it affects decisions.
+Отчёты о ходе работы СЛЕДУЕТ начинать с изменённого состояния, свидетельств, текущего риска и следующего действия. Рутинное комментирование работы инструментов СЛЕДУЕТ опускать, если оно не влияет на решения.
 
-## Example
+## Пример
 
-After interruption, a replacement agent reads the last checkpoint, verifies the working tree has not changed, reruns the failed validation, and resumes from `validating` rather than recreating the implementation.
+После прерывания сменный агент читает последнюю контрольную точку, убеждается, что рабочее дерево не изменилось, повторно запускает неуспешную валидацию и возобновляет работу из состояния `validating`, а не воссоздаёт реализацию.
 
-## Anti-patterns
+## Антипаттерны
 
-- Starting with implementation based only on the latest message.
-- Asking questions already answered by authoritative artifacts.
-- Continuing speculative work beyond a stop condition.
+- Начало с реализации, опираясь только на последнее сообщение.
+- Задавание вопросов, на которые уже отвечают авторитетные артефакты.
+- Продолжение спекулятивной работы за пределами условия остановки.
 
-## Best practices
+## Лучшие практики
 
-Use compact entry packets, record command-level evidence for reproducibility, and include one unambiguous next action in every handoff.
+Использовать компактные пакеты входа, фиксировать свидетельства на уровне команд для воспроизводимости и включать одно однозначное следующее действие в каждую передачу работы.
 
-## Related specifications
+## Связанные спецификации
 
-[VECTRA-001](VECTRA-001-constitution.md), [VECTRA-002](VECTRA-002-workflow.md), [VECTRA-009](VECTRA-009-context-engineering.md), and [VECTRA-010](VECTRA-010-multi-agent-collaboration.md).
+[VECTRA-001](VECTRA-001-constitution.md), [VECTRA-002](VECTRA-002-workflow.md), [VECTRA-009](VECTRA-009-context-engineering.md) и [VECTRA-010](VECTRA-010-multi-agent-collaboration.md).

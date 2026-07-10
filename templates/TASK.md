@@ -1,56 +1,56 @@
 ---
 id: TASK-NNN
 status: intake
-owner: "[task owner]"
-acceptance_authority: "[name or role]"
-priority: "[ordered priority]"
-parent: "[goal/change/bug]"
+owner: "[владелец задачи]"
+acceptance_authority: "[имя или роль]"
+priority: "[упорядоченный приоритет]"
+parent: "[цель/изменение/баг]"
 updated: YYYY-MM-DDTHH:MM:SSZ
 ---
 
-# [Outcome-oriented task title]
+# [Название задачи, ориентированное на результат]
 
-## Desired outcome
+## Желаемый результат
 
-[Observable result, users affected, and reason now.]
+[Наблюдаемый результат, затронутые пользователи и причина сделать сейчас.]
 
-## Scope envelope
+## Границы задачи
 
-- In scope: [artifacts, systems, actions]
-- Out of scope: [boundaries]
-- Approval required for: [material actions]
-- Stop conditions: [missing authority, evidence, safety, access]
+- В границах: [артефакты, системы, действия]
+- Вне границ: [границы]
+- Требует одобрения: [значимые действия]
+- Условия остановки: [нет полномочий, свидетельств, безопасности, доступа]
 
-## Context manifest
+## Манифест контекста
 
-| Source | Authority/relevance | Verified |
+| Источник | Полномочия/релевантность | Проверено |
 |---|---|---|
 
-Knowns: [validated facts]  
-Unknowns: [material gaps]  
-Assumptions: [temporary premises and verification plan]
+Известное: [проверенные факты]  
+Неизвестное: [существенные пробелы]  
+Допущения: [временные предпосылки и план проверки]
 
-## Success contract
+## Контракт успеха
 
-| Criterion | Validation method | Expected evidence | Result |
+| Критерий | Способ проверки | Ожидаемое свидетельство | Результат |
 |---|---|---|---|
 
-Failure conditions: [signals that force rework or escalation]
+Условия отказа: [сигналы, вынуждающие доработку или эскалацию]
 
-## Iteration plan
+## План итераций
 
-1. [Smallest coherent change and checkpoint.]
-2. [Validation and review.]
+1. [Наименьшее связное изменение и контрольная точка.]
+2. [Проверка и ревью.]
 
-## Execution log
+## Журнал выполнения
 
-| Time | State transition/action | Actor | Artifact/evidence |
+| Время | Смена состояния/действие | Актор | Артефакт/свидетельство |
 |---|---|---|---|
 
-## Closure or handoff
+## Закрытие или передача работы
 
-- Outcome: [accepted, blocked, or handed off]
-- Evidence: [links]
-- Residual risks: [owner and disposition]
-- Memory/decisions updated: [links or non-durable rationale]
-- Exact next action: [one resumable action]
+- Результат: [принято, заблокировано или передано]
+- Свидетельство: [ссылки]
+- Остаточные риски: [владелец и решение по ним]
+- Память/решения обновлены: [ссылки или недолговечное обоснование]
+- Точное следующее действие: [одно возобновляемое действие]

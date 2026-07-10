@@ -2,43 +2,43 @@
 id: SPEC-NNN
 status: draft
 version: 0.1.0
-owner: "[subject owner]"
+owner: "[владелец предмета]"
 ---
 
-# [Specification title]
+# [Название спецификации]
 
-## Purpose
+## Назначение
 
-[Normative scope and non-scope.]
+[Нормативные границы и то, что вне их.]
 
-## Definitions
+## Определения
 
-[Controlled terms.]
+[Контролируемые термины.]
 
-## Rules
+## Правила
 
-[Testable MUST/SHOULD/MAY obligations.]
+[Проверяемые обязательства ОБЯЗАН/СЛЕДУЕТ/МОЖЕТ.]
 
-## Responsibilities
+## Ответственность
 
-[Actors and authority.]
+[Акторы и полномочия.]
 
-## Workflow
+## Процесс
 
-[States, inputs, outputs, gates, failure behavior.]
+[Состояния, входы, выходы, шлюзы, поведение при отказе.]
 
-## Examples
+## Пример
 
-[Conforming applications.]
+[Соответствующие применения.]
 
-## Anti-patterns
+## Антипаттерны
 
-[Non-conforming or misleading applications.]
+[Несоответствующие или вводящие в заблуждение применения.]
 
-## Best practices
+## Лучшие практики
 
-[Advisory guidance.]
+[Рекомендательные указания.]
 
-## Related specifications
+## Связанные спецификации
 
-[Typed dependencies and compatibility impact.]
+[Типизированные зависимости и влияние на совместимость.]

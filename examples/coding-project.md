@@ -1,7 +1,7 @@
-# Coding project profile
+# Профиль проекта по программированию
 
-**Goal:** add resumable uploads to an existing client library. **Workflow:** inspect current code and decisions; specify behavior and compatibility; implement one bounded layer; run unit, integration, type, and regression checks; peer-review; update API docs and memory.
+**Цель:** добавить возобновляемые загрузки в существующую клиентскую библиотеку. **Рабочий процесс:** изучить текущий код и решения; специфицировать поведение и совместимость; реализовать один ограниченный слой; прогнать модульные, интеграционные, типовые и регрессионные проверки; провести экспертное рецензирование; обновить документацию API и память.
 
-Acceptance includes interruption recovery, checksum failure, retry limits, backward compatibility, and package build. A passing test command is evidence only if the relevant cases are present. The agent preserves unrelated working-tree changes and stops before publishing a package unless release authority is explicit.
+Приёмка включает восстановление после прерывания, сбой контрольной суммы, пределы повторных попыток, обратную совместимость и сборку пакета. Успешная тестовая команда является свидетельством только при наличии соответствующих случаев. Агент сохраняет несвязанные изменения рабочего дерева и останавливается перед публикацией пакета, если полномочия на релиз не заданы явно.
 
-Anti-pattern: large refactor combined with feature work, making failure attribution impossible.
+Антипаттерн: крупный рефакторинг вместе с работой над функциональностью, из-за чего невозможно определить причину отказа.

@@ -1,5 +1,5 @@
-# Vectra specifications
+# Спецификации Vectra
 
-Specifications are normative and ordered by dependency, not execution. A lower number does not override a higher number: [VECTRA-001](VECTRA-001-constitution.md) governs authority; [VECTRA-002](VECTRA-002-workflow.md) governs transitions; [VECTRA-007](VECTRA-007-success-contracts.md) governs acceptance.
+Спецификации нормативны и упорядочены по зависимостям, а не по порядку выполнения. Меньший номер не отменяет больший: [VECTRA-001](VECTRA-001-constitution.md) определяет полномочия; [VECTRA-002](VECTRA-002-workflow.md) определяет смены состояний; [VECTRA-007](VECTRA-007-success-contracts.md) определяет приёмку.
 
-Each specification contains purpose, definitions, rules, responsibilities, workflow, examples, anti-patterns, best practices, and related specifications. Conflicts MUST be recorded and resolved by a versioned change; agents MUST NOT silently choose one interpretation.
+Каждая спецификация содержит назначение, определения, правила, ответственность, процесс, примеры, антипаттерны, лучшие практики и связанные спецификации. Конфликты ОБЯЗАНЫ фиксироваться и разрешаться версионированным изменением; агентам ЗАПРЕЩЕНО молча выбирать одну из трактовок.

@@ -1,13 +1,13 @@
-# Memory flow
+# Поток памяти
 
 ```mermaid
 flowchart LR
-  E["Execution observation"] --> C{"Classify"}
-  C -->|task-local| W["Working memory"]
-  C -->|durable candidate| V["Validate provenance"]
-  C -->|event| H["Historical memory"]
-  V -->|accepted| P["Permanent memory"]
-  V -->|rejected| W
-  P --> X["Next context manifest"]
+  E["Наблюдение при выполнении"] --> C{"Классифицировать"}
+  C -->|локально для задачи| W["Рабочая память"]
+  C -->|кандидат в постоянную| V["Проверить происхождение"]
+  C -->|событие| H["Историческая память"]
+  V -->|принято| P["Постоянная память"]
+  V -->|отклонено| W
+  P --> X["Следующий манифест контекста"]
   H --> X
 ```

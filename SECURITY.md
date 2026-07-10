@@ -1,5 +1,5 @@
-# Security Policy
+# Политика безопасности
 
-Vectra is documentation, but unsafe operational rules can create real risk. Report vulnerabilities privately to the repository owner. Include the affected specification, plausible harm, reproduction scenario, and recommended mitigation. Do not publish exploitable details before coordination.
+Vectra — это документация, но небезопасные операционные правила могут создавать реальный риск. Сообщайте об уязвимостях приватно владельцу репозитория. Укажите затронутую спецификацию, вероятный вред, сценарий воспроизведения и рекомендуемое смягчение. Не публикуйте пригодные для эксплуатации детали до согласования.
 
-Supported line: latest `0.x` release. Security corrections may change recommendations immediately; breaking normative changes require a versioned release and migration note.
+Поддерживаемая линия: последний выпуск `0.x`. Исправления безопасности могут менять рекомендации немедленно; нарушающие совместимость нормативные изменения требуют версионированного выпуска и заметки о миграции.

@@ -1,19 +1,19 @@
-# Agent interaction
+# Взаимодействие агентов
 
 ```mermaid
 sequenceDiagram
-  participant O as Owner
-  participant C as Coordinator
-  participant M as Maker
-  participant R as Reviewer
-  O->>C: goal, authority, acceptance
-  C->>M: bounded assignment envelope
-  M-->>C: artifact, checkpoint, evidence
-  C->>R: contract and evidence
-  R-->>C: verdict and findings
-  alt accepted
-    C->>O: outcome and residual risk
-  else rework
-    C->>M: reproducible findings
+  participant O as Владелец
+  participant C as Координатор
+  participant M as Исполнитель
+  participant R as Ревьюер
+  O->>C: цель, полномочия, приёмка
+  C->>M: границы порученной задачи
+  M-->>C: артефакт, контрольная точка, свидетельство
+  C->>R: контракт и свидетельство
+  R-->>C: вердикт и замечания
+  alt принято
+    C->>O: результат и остаточный риск
+  else доработка
+    C->>M: воспроизводимые замечания
   end
 ```

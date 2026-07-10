@@ -1,15 +1,15 @@
-# Adoption profiles
+# Профили внедрения
 
-Examples are informative. Each profile selects the same VECTRA loop and changes artifact depth, roles, risks, and evidence. They demonstrate tailoring without redefining Core rules.
+Примеры носят информативный характер. Каждый профиль выбирает один и тот же цикл VECTRA и меняет глубину артефактов, роли, риски и свидетельства. Они демонстрируют адаптацию без переопределения правил Ядра.
 
-| Profile | Primary complexity |
+| Профиль | Основная сложность |
 |---|---|
-| [Personal project](personal-project.md) | low coordination |
-| [Startup](startup.md) | rapid priority change |
-| [SaaS](saas.md) | reliability and customer data |
-| [Telegram bot](telegram-bot.md) | platform constraints |
-| [AI assistant](ai-assistant.md) | evaluation and unsafe output |
-| [Coding project](coding-project.md) | executable correctness |
-| [Content creation](content-creation.md) | editorial approval and provenance |
-| [Marketing](marketing.md) | claims, consent, and measurement |
-| [Research](research-project.md) | source quality and uncertainty |
+| [Личный проект](personal-project.md) | низкая координация |
+| [Стартап](startup.md) | быстрая смена приоритетов |
+| [SaaS](saas.md) | надёжность и данные клиентов |
+| [Telegram-бот](telegram-bot.md) | ограничения платформы |
+| [ИИ-ассистент](ai-assistant.md) | оценка и небезопасный вывод |
+| [Проект по программированию](coding-project.md) | исполняемая корректность |
+| [Создание контента](content-creation.md) | редакторское одобрение и происхождение |
+| [Маркетинг](marketing.md) | заявления, согласие и измерение |
+| [Исследование](research-project.md) | качество источников и неопределённость |

@@ -1,13 +1,13 @@
-# Contributing
+# Участие в проекте
 
-Contributions MUST preserve vendor neutrality and the distinction between normative specifications and examples.
+Вклады ОБЯЗАНЫ сохранять нейтральность к поставщикам и различие между нормативными спецификациями и примерами.
 
-1. Open an issue or decision proposal for semantic changes.
-2. Make one coherent change per branch.
-3. Update affected cross-references, templates, examples, `VERSION`, and `CHANGELOG.md`.
-4. Run `python3 scripts/validate_docs.py`.
-5. Explain compatibility impact and validation evidence in the change request.
+1. Создайте issue или предложение решения для смысловых изменений.
+2. Вносите одно связное изменение на ветку.
+3. Обновите затронутые перекрёстные ссылки, шаблоны, примеры, `VERSION` и `CHANGELOG.md`.
+4. Запустите `python3 scripts/validate_docs.py`.
+5. Опишите влияние на совместимость и свидетельства проверки в запросе на изменение.
 
-Specification changes use `major.minor.patch`: major breaks conformance, minor adds backward-compatible rules, patch clarifies without changing obligations. Editorial fixes do not redefine normative terms.
+Изменения спецификаций используют `major.minor.patch`: major нарушает соответствие, minor добавляет обратно совместимые правила, patch уточняет без изменения обязательств. Редакторские правки не переопределяют нормативные термины.
 
-Contributors MUST follow [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). By contributing, contributors agree that their work is distributed under the repository license.
+Участники ОБЯЗАНЫ соблюдать [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Внося вклад, участники соглашаются, что их работа распространяется под лицензией репозитория.

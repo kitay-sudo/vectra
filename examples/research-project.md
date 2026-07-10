@@ -1,7 +1,7 @@
-# Research project profile
+# Профиль исследовательского проекта
 
-**Goal:** assess whether a policy intervention reduces processing delay. **Roles:** Researcher designs the method; Analyst executes; independent Reviewer challenges inference; owner accepts the report.
+**Цель:** оценить, снижает ли вмешательство в политику задержку обработки. **Роли:** Исследователь проектирует метод; Аналитик выполняет; независимый Ревьюер оспаривает вывод; владелец принимает отчёт.
 
-The research record freezes scope, outcome definition, inclusion criteria, and analysis plan before results. Source provenance, missing data, counter-evidence, uncertainty, and reproducibility artifacts are mandatory. Memory distinguishes reported fact, derived result, and interpretation. New evidence supersedes conclusions through a decision record rather than editing history.
+Запись исследования замораживает границы, определение исхода, критерии включения и план анализа до получения результатов. Происхождение источников, пропущенные данные, контрсвидетельства, неопределённость и артефакты воспроизводимости обязательны. Память различает сообщённый факт, производный результат и интерпретацию. Новое свидетельство замещает выводы через запись решения, а не редактирование истории.
 
-Anti-pattern: causal language from an uncontrolled association.
+Антипаттерн: причинно-следственные формулировки на основе неконтролируемой ассоциации.

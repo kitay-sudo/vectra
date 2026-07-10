@@ -1,52 +1,52 @@
-# VECTRA-010: Multi-Agent Collaboration
+# VECTRA-010: Взаимодействие агентов
 
-**Status:** Draft · **Version:** 0.1.0 · **Normative:** Yes
+**Статус:** Черновик · **Версия:** 0.1.0 · **Нормативный:** Да
 
-## Purpose
+## Назначение
 
-Coordinate multiple agents without losing ownership, consistency, or evidence.
+Координировать несколько агентов, не теряя владения, согласованности или свидетельств.
 
-## Definitions
+## Определения
 
-- **Orchestrator:** coordinator responsible for decomposition and integration.
-- **Assignment envelope:** task, inputs, authority, outputs, validation, stop condition, and write scope.
-- **Maker/checker:** separation between production and independent verification.
-- **Integration owner:** sole actor authorized to reconcile outputs into final state.
+- **Оркестратор:** координатор, отвечающий за декомпозицию и интеграцию.
+- **Рамки назначения:** задача, входы, полномочия, выходы, валидация, условие остановки и границы записи.
+- **Исполнитель/проверяющий:** разделение между производством и независимой проверкой.
+- **Владелец интеграции:** единственный субъект, уполномоченный сводить выходы в итоговое состояние.
 
-## Rules
+## Правила
 
-Multi-agent execution MUST have one coordinator and one integration owner. Delegation MUST be bounded and traceable. Parallel assignments SHOULD avoid overlapping mutable state. Agents MUST NOT recursively delegate unless authorized. Outputs MUST be artifacts, not unverifiable claims. Consensus MUST NOT replace owner authority or evidence.
+Многоагентное выполнение ОБЯЗАНО иметь одного координатора и одного владельца интеграции. Делегирование ОБЯЗАНО быть ограниченным и прослеживаемым. Параллельным назначениям СЛЕДУЕТ избегать пересекающегося изменяемого состояния. Агентам ЗАПРЕЩЕНО рекурсивно делегировать без разрешения. Выходы ОБЯЗАНЫ быть артефактами, а не непроверяемыми утверждениями. Консенсус ЗАПРЕЩЕНО заменять полномочиями владельца или свидетельством.
 
-## Responsibilities
+## Ответственность
 
-The planning role creates dependency-aware work packages. The coordinator issues envelopes and maintains status. Executors checkpoint results. Reviewers challenge outputs. The integration owner resolves mechanical conflicts and escalates semantic conflicts. The owner decides unresolved priority or risk disputes.
+Роль планирования создаёт рабочие пакеты с учётом зависимостей. Координатор выдаёт рамки назначения и поддерживает статус. Исполнители фиксируют результаты в контрольных точках. Ревьюеры оспаривают выходы. Владелец интеграции разрешает механические конфликты и эскалирует смысловые конфликты. Владелец решает нерешённые споры о приоритете или риске.
 
-## Workflow
+## Процесс
 
-1. Decompose only independent or clearly sequenced work.
-2. Create assignment envelopes and conflict map.
-3. Dispatch with shared immutable context and scoped mutable ownership.
-4. Require agents to return outcome, evidence, changed artifacts, assumptions, and open risks.
-5. Validate each output before integration.
-6. Integrate in dependency order and rerun system-level validation.
-7. Resolve conflict by evidence, declared criteria, then authority—not majority vote.
-8. Update shared memory only after integration acceptance.
+1. Декомпозировать только независимую или чётко упорядоченную работу.
+2. Создать рамки назначения и карту конфликтов.
+3. Разослать с общим неизменяемым контекстом и ограниченным владением изменяемым состоянием.
+4. Требовать от агентов возвращать результат, свидетельство, изменённые артефакты, допущения и открытые риски.
+5. Валидировать каждый выход перед интеграцией.
+6. Интегрировать в порядке зависимостей и повторно запустить валидацию на уровне системы.
+7. Разрешать конфликт свидетельством, объявленными критериями, затем полномочиями — не большинством голосов.
+8. Обновлять общую память только после приёмки интеграции.
 
-## Example
+## Пример
 
-A Researcher compares standards while a Writer inventories existing docs because their outputs do not overlap. The Architect consumes both; the Reviewer checks the integrated proposal. Two agents are not assigned simultaneous edits to the same specification.
+Исследователь сравнивает стандарты, пока технический писатель проводит инвентаризацию существующих документов, потому что их выходы не пересекаются. Архитектор потребляет оба; ревьюер проверяет интегрированное предложение. Двум агентам не назначают одновременное редактирование одной и той же спецификации.
 
-## Anti-patterns
+## Антипаттерны
 
-- Agent swarms without a dependency graph.
-- Majority vote on factual correctness.
-- Each agent maintaining a private version of project truth.
-- Parallelism whose merge cost exceeds the work saved.
+- Рои агентов без графа зависимостей.
+- Большинство голосов по фактической корректности.
+- Каждый агент ведёт собственную версию правды проекта.
+- Параллелизм, чья стоимость слияния превышает сэкономленную работу.
 
-## Best practices
+## Лучшие практики
 
-Parallelize search, inventory, and isolated modules; serialize shared architecture and final integration. Use maker/checker separation when failure impact justifies its cost.
+Параллелить поиск, инвентаризацию и изолированные модули; последовательно вести общую архитектуру и итоговую интеграцию. Использовать разделение исполнителя и проверяющего, когда влияние отказа оправдывает его стоимость.
 
-## Related specifications
+## Связанные спецификации
 
-[VECTRA-001](VECTRA-001-constitution.md), [VECTRA-008](VECTRA-008-agent-roles.md), and [VECTRA-011](VECTRA-011-quality-assurance.md).
+[VECTRA-001](VECTRA-001-constitution.md), [VECTRA-008](VECTRA-008-agent-roles.md) и [VECTRA-011](VECTRA-011-quality-assurance.md).

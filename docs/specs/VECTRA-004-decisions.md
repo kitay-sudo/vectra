@@ -1,43 +1,43 @@
-# VECTRA-004: Decisions
+# VECTRA-004: Решения
 
-**Status:** Draft · **Version:** 0.1.0 · **Normative:** Yes
+**Статус:** Черновик · **Версия:** 0.1.0 · **Нормативный:** Да
 
-## Purpose
+## Назначение
 
-Preserve material choices, authority, evidence, and trade-offs so future agents do not relitigate settled questions blindly.
+Сохранять значимые выборы, полномочия, свидетельства и компромиссы, чтобы будущие агенты не пересматривали вслепую решённые вопросы.
 
-## Definitions
+## Определения
 
-- **Decision record (DR):** immutable account of a material choice.
-- **Decider:** actor with authority to accept the consequences.
-- **Supersession:** new decision replacing an earlier one without rewriting history.
+- **Запись решения (DR):** неизменяемое описание значимого выбора.
+- **Принимающий решение:** действующее лицо с полномочиями принять последствия.
+- **Замещение:** новое решение, заменяющее прежнее без переписывания истории.
 
-## Rules
+## Правила
 
-A decision record MUST state context, decider, considered options, chosen option, rationale, consequences, evidence, and status. Material architecture, policy, cost, privacy, safety, and irreversible choices require records. Accepted records MUST NOT be edited to change meaning; create a superseding record. Recommendations MUST be separated from authorized decisions.
+Запись решения ОБЯЗАНА содержать контекст, принимающего решение, рассмотренные варианты, выбранный вариант, обоснование, последствия, свидетельства и статус. Значимые выборы по архитектуре, политике, стоимости, приватности, безопасности и необратимые выборы требуют записей. Принятые записи ЗАПРЕЩЕНО редактировать так, чтобы менять смысл; создавайте замещающую запись. Рекомендации ОБЯЗАНЫ быть отделены от авторизованных решений.
 
-## Responsibilities
+## Ответственность
 
-Agents research and frame options without inventing consensus. Owners or delegates decide. Reviewers test whether evidence supports the stated trade-off. Knowledge curators maintain links and supersession status.
+Агенты исследуют и формулируют варианты, не выдумывая консенсус. Владельцы или их представители принимают решение. Ревьюеры проверяют, подтверждают ли свидетельства заявленный компромисс. Кураторы знаний поддерживают ссылки и статус замещения.
 
-## Workflow
+## Процесс
 
-Trigger a record when a choice has durable consequence; identify the decider; define evaluation criteria before advocating an option; compare viable options including “do nothing”; capture dissent and uncertainty; obtain explicit decision; publish and link it; revisit only on a declared review date or changed premise.
+Создавать запись, когда выбор имеет долговременное последствие; определить принимающего решение; задать критерии оценки до продвижения какого-либо варианта; сравнить жизнеспособные варианты, включая «ничего не делать»; зафиксировать несогласие и неопределённость; получить явное решение; опубликовать и связать его; пересматривать только в объявленную дату пересмотра или при изменившейся предпосылке.
 
-## Example
+## Пример
 
-Choosing Markdown over a database records portability as the priority, weaker structured queries as a consequence, the owner as decider, and schema growth as a revisit trigger.
+Выбор Markdown вместо базы данных фиксирует переносимость как приоритет, более слабые структурированные запросы как последствие, владельца как принимающего решение и рост схемы как триггер пересмотра.
 
-## Anti-patterns
+## Антипаттерны
 
-- Recording only the selected option.
-- “Team agreed” without named authority or date.
-- Rewriting an old record after an outcome becomes known.
+- Фиксация только выбранного варианта.
+- «Команда согласилась» без названного носителя полномочий или даты.
+- Переписывание старой записи после того, как результат стал известен.
 
-## Best practices
+## Лучшие практики
 
-Keep records short enough to read, link raw research instead of embedding it, and specify reversible checkpoints for uncertain choices.
+Держать записи достаточно короткими для чтения, ссылаться на сырое исследование, а не встраивать его, и задавать обратимые контрольные точки для неопределённых выборов.
 
-## Related specifications
+## Связанные спецификации
 
-[VECTRA-001](VECTRA-001-constitution.md), [VECTRA-006](VECTRA-006-owner-protocol.md), and [VECTRA-012](VECTRA-012-knowledge-management.md).
+[VECTRA-001](VECTRA-001-constitution.md), [VECTRA-006](VECTRA-006-owner-protocol.md) и [VECTRA-012](VECTRA-012-knowledge-management.md).

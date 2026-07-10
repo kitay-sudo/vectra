@@ -1,0 +1,17 @@
+# Скрипт запускается через `curl | sh` на Linux/macOS — только LF,
+# иначе шебанг ломается на CRLF.
+install.sh text eol=lf
+*.sh text eol=lf
+
+# Манифест читают оба установщика построчно — фиксируем LF.
+install/manifest.txt text eol=lf
+
+# PowerShell читаем через `irm | iex`; CRLF безопаснее для запуска с диска.
+*.ps1 text eol=crlf
+
+# Прочее нормализуем к LF в репозитории.
+*.md text eol=lf
+*.py text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf

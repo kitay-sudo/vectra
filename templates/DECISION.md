@@ -1,35 +1,35 @@
 ---
 id: DR-NNN
 status: proposed
-decider: "[authorized actor]"
+decider: "[уполномоченный актор]"
 date: YYYY-MM-DD
 supersedes: []
-review_trigger: "[date or changed premise]"
+review_trigger: "[дата или изменившаяся предпосылка]"
 ---
 
-# [Decision title]
+# [Название решения]
 
-## Context and decision criteria
+## Контекст и критерии решения
 
-[Decision required, constraints, evidence quality, and criteria ordered by importance.]
+[Требуемое решение, ограничения, качество свидетельств и критерии, упорядоченные по важности.]
 
-## Options
+## Варианты
 
-| Option | Benefits | Costs/risks | Evidence | Reversibility |
+| Вариант | Выгоды | Издержки/риски | Свидетельство | Обратимость |
 |---|---|---|---|---|
 
-## Decision
+## Решение
 
-[Chosen option, explicit decider, and authorization date.]
+[Выбранный вариант, явно названный принимающий решение и дата авторизации.]
 
-## Rationale and uncertainty
+## Обоснование и неопределённость
 
-[Why it best meets the criteria; dissent and unknowns.]
+[Почему он лучше всего отвечает критериям; особые мнения и неизвестное.]
 
-## Consequences and validation
+## Последствия и проверка
 
-[Positive/negative consequences, follow-ups, success signals, rollback or revisit trigger.]
+[Положительные/отрицательные последствия, дальнейшие шаги, сигналы успеха, триггер отката или пересмотра.]
 
-## Relations
+## Связи
 
-[Tasks, risks, specifications, and superseded decisions.]
+[Задачи, риски, спецификации и замещённые решения.]

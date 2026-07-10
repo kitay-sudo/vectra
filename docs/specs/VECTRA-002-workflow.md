@@ -1,67 +1,67 @@
-# VECTRA-002: Workflow
+# VECTRA-002: Рабочий цикл
 
-**Status:** Draft · **Version:** 0.1.0 · **Normative:** Yes
+**Статус:** Черновик · **Версия:** 0.1.0 · **Нормативный:** Да
 
-## Purpose
+## Назначение
 
-Define the VECTRA loop as an auditable state machine rather than an instruction prompt.
+Определить цикл VECTRA как аудируемый конечный автомат, а не как промпт-инструкцию.
 
-## Definitions
+## Определения
 
-- **Iteration:** one bounded traversal of the loop.
-- **Gate:** required condition for a state transition.
-- **Evidence:** reproducible observation supporting a claim.
-- **Checkpoint:** durable state sufficient for resumption.
+- **Итерация:** один ограниченный проход по циклу.
+- **Шлюз:** обязательное условие для смены состояния.
+- **Свидетельство:** воспроизводимое наблюдение, подтверждающее утверждение.
+- **Контрольная точка:** долговечное состояние, достаточное для возобновления.
 
-## Rules
+## Правила
 
-An active task MUST have exactly one lifecycle state: `intake`, `context`, `planned`, `executing`, `validating`, `review`, `blocked`, `accepted`, or `closed`. State changes MUST identify actor, time, reason, and resulting artifact. Failed validation MUST return to planning or execution; it MUST NOT be waived silently. Every interruption MUST leave a checkpoint.
+Активная задача ОБЯЗАНА иметь ровно одно состояние жизненного цикла: `intake`, `context`, `planned`, `executing`, `validating`, `review`, `blocked`, `accepted` или `closed`. Смены состояния ОБЯЗАНЫ указывать действующее лицо, время, причину и получившийся артефакт. Неуспешная валидация ОБЯЗАНА возвращать к планированию или выполнению; ЗАПРЕЩЕНО молча её отменять. Каждое прерывание ОБЯЗАНО оставлять контрольную точку.
 
-## Responsibilities
+## Ответственность
 
-The coordinator owns state transitions. The executor owns bounded changes. The reviewer owns independent acceptance evidence when risk requires separation. The owner resolves priority, scope, and authority blocks.
+Координатор отвечает за смены состояний. Исполнитель отвечает за ограниченные изменения. Ревьюер отвечает за независимые свидетельства приёмки, когда риск требует разделения. Владелец разрешает блокировки по приоритету, границам и полномочиям.
 
-## Workflow
+## Процесс
 
-| State | Required inputs | Required action | Exit gate / output |
+| Состояние | Требуемые входы | Требуемое действие | Шлюз выхода / результат |
 |---|---|---|---|
-| Intake | request, project goal | normalize desired outcome and constraints | task with owner and priority |
-| Context | task | load minimum authoritative knowledge; list unknowns | context manifest and no unsafe unknowns |
-| Planned | context, success contract | decompose change, risks, validation, rollback | approved or delegated plan |
-| Executing | plan | make smallest coherent change; checkpoint | changed artifacts and execution log |
-| Validating | change | run specified checks and capture evidence | evidence for every criterion |
-| Review | evidence | assess correctness, risk, and conformance | accept, rework, or escalate decision |
-| Accepted | review decision | update memory, decisions, changelog | repository reflects learned state |
-| Closed | accepted task | summarize outcome and residual risks | reproducible closure record |
-| Blocked | stop condition | preserve state and ask minimal question | explicit unblock condition |
+| Приём | запрос, цель проекта | нормализовать желаемый результат и ограничения | задача с владельцем и приоритетом |
+| Контекст | задача | загрузить минимум авторитетных знаний; перечислить неизвестные | манифест контекста и отсутствие небезопасных неизвестных |
+| Запланировано | контекст, контракт успеха | декомпозировать изменение, риски, валидацию, откат | одобренный или делегированный план |
+| Выполнение | план | внести наименьшее связное изменение; контрольная точка | изменённые артефакты и журнал выполнения |
+| Валидация | изменение | выполнить указанные проверки и собрать свидетельства | свидетельство для каждого критерия |
+| Ревью | свидетельства | оценить корректность, риск и соответствие | решение: принять, доработать или эскалировать |
+| Принято | решение ревью | обновить память, решения, журнал изменений | репозиторий отражает усвоенное состояние |
+| Закрыто | принятая задача | подвести итог результата и остаточные риски | воспроизводимая запись закрытия |
+| Заблокировано | условие остановки | сохранить состояние и задать минимальный вопрос | явное условие разблокировки |
 
-Iteration algorithm:
+Алгоритм итерации:
 
-1. Select the highest-priority ready task.
-2. Rebuild context from artifacts; do not trust cached conversation alone.
-3. Confirm the success contract and choose a bounded increment.
-4. Execute only that increment.
-5. Validate in proportion to risk.
-6. Review claims against evidence.
-7. If rejected, record the failure signal and start another iteration.
-8. If accepted, update durable memory before selecting further work.
-9. Close only when goal-level exit criteria are met.
+1. Выбрать готовую задачу с наивысшим приоритетом.
+2. Перестроить контекст из артефактов; не полагаться только на кешированную переписку.
+3. Подтвердить контракт успеха и выбрать ограниченное приращение.
+4. Выполнить только это приращение.
+5. Валидировать соразмерно риску.
+6. Сверить утверждения со свидетельствами.
+7. При отклонении зафиксировать сигнал отказа и начать новую итерацию.
+8. При принятии обновить долговечную память до выбора следующей работы.
+9. Закрывать только при выполнении критериев выхода уровня цели.
 
-## Example
+## Пример
 
-For a documentation link checker, iteration one defines link invariants; iteration two adds the checker; iteration three repairs discovered links. Each iteration is independently reviewable.
+Для средства проверки ссылок в документации итерация один определяет инварианты ссылок; итерация два добавляет средство проверки; итерация три исправляет обнаруженные ссылки. Каждая итерация проверяема независимо.
 
-## Anti-patterns
+## Антипаттерны
 
-- A monolithic “do everything” execution phase.
-- Planning after implementation to justify the result.
-- Marking work done before memory and decisions are synchronized.
-- Infinite self-reflection without a state-changing artifact.
+- Монолитная фаза выполнения «сделать всё сразу».
+- Планирование после реализации для оправдания результата.
+- Пометка работы выполненной до синхронизации памяти и решений.
+- Бесконечная саморефлексия без артефакта, меняющего состояние.
 
-## Best practices
+## Лучшие практики
 
-Timebox research, cap concurrent work, make validation commands deterministic, and shrink an iteration when its review surface becomes unclear.
+Ограничивать исследование по времени, ограничивать объём параллельной работы, делать команды валидации детерминированными и уменьшать итерацию, когда её поверхность ревью становится неясной.
 
-## Related specifications
+## Связанные спецификации
 
-[VECTRA-003](VECTRA-003-memory.md), [VECTRA-005](VECTRA-005-agent-protocol.md), [VECTRA-007](VECTRA-007-success-contracts.md), and [VECTRA-011](VECTRA-011-quality-assurance.md).
+[VECTRA-003](VECTRA-003-memory.md), [VECTRA-005](VECTRA-005-agent-protocol.md), [VECTRA-007](VECTRA-007-success-contracts.md) и [VECTRA-011](VECTRA-011-quality-assurance.md).

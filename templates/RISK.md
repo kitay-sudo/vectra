@@ -1,27 +1,27 @@
 ---
 id: RISK-NNN
 status: open
-owner: "[risk owner]"
+owner: "[владелец риска]"
 identified: YYYY-MM-DD
 review: YYYY-MM-DD
 ---
 
-# [Uncertain event and consequence]
+# [Неопределённое событие и последствие]
 
-## Cause, event, impact
+## Причина, событие, влияние
 
-[If cause occurs, event may happen, leading to measurable impact.]
+[Если наступает причина, событие может произойти, приводя к измеримому влиянию.]
 
-## Assessment
+## Оценка
 
-| Likelihood | Impact | Detectability | Exposure rationale |
+| Вероятность | Влияние | Обнаружимость | Обоснование подверженности |
 |---|---|---|---|
 
-## Controls
+## Меры контроля
 
-| Type | Action | Owner | Trigger | Evidence |
+| Тип | Действие | Владелец | Триггер | Свидетельство |
 |---|---|---|---|---|
 
-## Residual risk and authority
+## Остаточный риск и полномочия
 
-[Remaining exposure, accepting authority, expiry/review trigger.]
+[Оставшаяся подверженность, принимающий риск, триггер истечения/пересмотра.]

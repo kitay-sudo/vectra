@@ -1,53 +1,53 @@
-# VECTRA-000: Manifest
+# VECTRA-000: Манифест
 
-**Status:** Draft · **Version:** 0.1.0 · **Normative:** Yes
+**Статус:** Черновик · **Версия:** 0.1.0 · **Нормативный:** Да
 
-## Purpose
+## Назначение
 
-Define the scope, invariants, and conformance boundary of the AI Project Operating System.
+Определить границы, инварианты и границу соответствия операционной системы ИИ-проекта.
 
-## Definitions
+## Определения
 
-- **Project system of record:** versioned artifacts accepted by the owner.
-- **Agent:** replaceable AI process acting within delegated authority.
-- **Owner:** human or accountable body holding final project authority.
-- **Loop:** a bounded pass through context, planning, execution, validation, review, and memory update.
-- **Artifact:** durable, addressable project record.
-- **Conformance:** observable compliance with declared VECTRA obligations.
+- **Система записей проекта:** версионированные артефакты, принятые владельцем.
+- **Агент:** заменяемый ИИ-процесс, действующий в пределах делегированных полномочий.
+- **Владелец:** человек или ответственный орган, обладающий финальными полномочиями по проекту.
+- **Цикл:** ограниченный проход через контекст, планирование, выполнение, валидацию, ревью и обновление памяти.
+- **Артефакт:** долговечная адресуемая запись проекта.
+- **Соответствие:** наблюдаемое выполнение заявленных обязательств VECTRA.
 
-## Rules
+## Правила
 
-1. The project system of record MUST outrank conversation history.
-2. Every agent MUST be replaceable without losing accepted knowledge.
-3. Material work MUST be traceable from goal to task, change, evidence, and decision.
-4. Uncertainty MUST be exposed. An agent MUST NOT fabricate missing facts.
-5. Work MUST proceed in reviewable increments with bounded blast radius.
-6. Authority MUST be explicit; capability does not imply permission.
-7. Accepted knowledge MUST be maintained near the work and versioned with it.
-8. VECTRA MUST remain vendor-, model-, and tool-neutral.
+1. Система записей проекта ОБЯЗАНА иметь приоритет над историей переписки.
+2. Каждый агент ОБЯЗАН быть заменяемым без потери принятых знаний.
+3. Значимая работа ОБЯЗАНА прослеживаться от цели к задаче, изменению, свидетельству и решению.
+4. Неопределённость ОБЯЗАНА раскрываться. Агенту ЗАПРЕЩЕНО выдумывать недостающие факты.
+5. Работа ОБЯЗАНА вестись проверяемыми приращениями с ограниченным радиусом воздействия.
+6. Полномочия ОБЯЗАНЫ быть явными; наличие возможности не подразумевает разрешения.
+7. Принятые знания ОБЯЗАНЫ храниться рядом с работой и версионироваться вместе с ней.
+8. VECTRA ОБЯЗАНА оставаться независимой от поставщика, модели и инструментов.
 
-## Responsibilities
+## Ответственность
 
-The owner declares goals, authority, risk tolerance, and acceptance. Agents construct context, act within scope, generate evidence, and externalize reusable knowledge. Maintainers evolve the standard without silently breaking conformance.
+Владелец объявляет цели, полномочия, допустимый уровень риска и приёмку. Агенты формируют контекст, действуют в пределах границ, порождают свидетельства и выносят наружу переиспользуемые знания. Сопровождающие развивают стандарт, молча не нарушая соответствие.
 
-## Workflow
+## Процесс
 
-Adopt a version, select a conformance profile, instantiate required artifacts, execute [VECTRA-002](VECTRA-002-workflow.md), audit conformance, then record deviations. A local rule MAY specialize VECTRA but MUST identify the specialization and MUST NOT claim Core conformance if it violates a Core requirement.
+Принять версию, выбрать профиль соответствия, создать требуемые артефакты, выполнить [VECTRA-002](VECTRA-002-workflow.md), провести аудит соответствия, затем зафиксировать отклонения. Локальное правило МОЖЕТ уточнять VECTRA, но ОБЯЗАНО обозначить это уточнение и ЗАПРЕЩЕНО заявлять о соответствии профилю Core, если оно нарушает требование Core.
 
-## Example
+## Пример
 
-A new agent reads `PROJECT.md`, active `TASK.md`, relevant decisions, and `MEMORY.md`; it resumes the next permitted transition without needing the prior chat.
+Новый агент читает `PROJECT.md`, активный `TASK.md`, релевантные решения и `MEMORY.md`; он возобновляет следующую разрешённую смену состояния, не нуждаясь в предыдущей переписке.
 
-## Anti-patterns
+## Антипаттерны
 
-- Treating a long system prompt as permanent memory.
-- Allowing an agent to approve its own high-risk change.
-- Recording outcomes without evidence or provenance.
+- Восприятие длинного системного промпта как постоянной памяти.
+- Разрешение агенту одобрять собственное высокорисковое изменение.
+- Фиксация результатов без свидетельств или происхождения.
 
-## Best practices
+## Лучшие практики
 
-Keep the authoritative set small, link rather than duplicate, and measure resumability by performing cold-start handoffs.
+Держать авторитетный набор небольшим, ссылаться, а не дублировать, и измерять восстанавливаемость, выполняя передачи работы с холодного старта.
 
-## Related specifications
+## Связанные спецификации
 
-[VECTRA-001](VECTRA-001-constitution.md), [VECTRA-002](VECTRA-002-workflow.md), [VECTRA-003](VECTRA-003-memory.md), and [VECTRA-012](VECTRA-012-knowledge-management.md).
+[VECTRA-001](VECTRA-001-constitution.md), [VECTRA-002](VECTRA-002-workflow.md), [VECTRA-003](VECTRA-003-memory.md) и [VECTRA-012](VECTRA-012-knowledge-management.md).

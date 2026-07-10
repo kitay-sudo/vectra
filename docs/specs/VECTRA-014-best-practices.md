@@ -1,52 +1,52 @@
-# VECTRA-014: Best Practices
+# VECTRA-014: Лучшие практики
 
-**Status:** Draft · **Version:** 0.1.0 · **Normative:** No
+**Статус:** Черновик · **Версия:** 0.1.0 · **Нормативный:** Нет
 
-## Purpose
+## Назначение
 
-Collect operational recommendations derived from the normative specifications.
+Собрать операционные рекомендации, выведенные из нормативных спецификаций.
 
-## Definitions
+## Определения
 
-- **Operating latency:** time from an observed state to a correct next transition.
-- **Documentation drag:** maintenance cost imposed by redundant or low-value records.
+- **Операционная задержка:** время от наблюдаемого состояния до корректной следующей смены состояния.
+- **Документационное бремя:** стоимость сопровождения, налагаемая избыточными или малоценными записями.
 
-## Rules
+## Правила
 
-This document is advisory. Where it conflicts with a normative specification, the normative specification governs.
+Этот документ носит рекомендательный характер. Если он конфликтует с нормативной спецификацией, преимущество имеет нормативная спецификация.
 
-## Responsibilities
+## Ответственность
 
-Project maintainers select practices appropriate to risk and record deviations that affect conformance. Retrospective owners replace folklore with evidence.
+Сопровождающие проекта выбирают практики, соответствующие риску, и фиксируют отступления, влияющие на соответствие. Владельцы ретроспектив заменяют предания свидетельствами.
 
-## Workflow and recommendations
+## Процесс
 
-1. Start with Core artifacts; add roles and records only when a real coordination cost appears.
-2. Keep iterations small enough that one reviewer can understand the full consequence.
-3. Write acceptance criteria before implementation and failure conditions before validation.
-4. Prefer links to duplicated rules and current state to narrative status reports.
-5. End every work session with state, evidence, risks, and one next action.
-6. Test cold-start recovery periodically with an agent that has no chat history.
-7. Limit work in progress; unfinished parallel tasks amplify context and merge cost.
-8. Put volatile facts behind freshness markers and verification triggers.
-9. Automate syntax and consistency checks; reserve human review for meaning and harm.
-10. Treat recurring questions, defects, and handoff failures as signals of missing project knowledge.
+1. Начинать с артефактов ядра; добавлять роли и записи только тогда, когда появляется реальная стоимость координации.
+2. Держать итерации достаточно малыми, чтобы один ревьюер мог осознать все последствия целиком.
+3. Писать критерии приёмки до реализации, а условия отказа — до валидации.
+4. Предпочитать ссылки дублированным правилам, а текущее состояние — повествовательным отчётам о статусе.
+5. Завершать каждую рабочую сессию состоянием, свидетельствами, рисками и одним следующим действием.
+6. Периодически проверять восстановление из холодного старта агентом, не имеющим истории чата.
+7. Ограничивать объём незавершённой работы; незаконченные параллельные задачи усиливают контекст и стоимость слияния.
+8. Помещать изменчивые факты за маркеры актуальности и триггеры верификации.
+9. Автоматизировать проверки синтаксиса и согласованности; оставлять человеческую проверку для смысла и вреда.
+10. Трактовать повторяющиеся вопросы, дефекты и сбои передачи работы как сигналы отсутствующего знания проекта.
 
-## Example
+## Пример
 
-If agents repeatedly ask how releases are approved, add one authority rule to `PROJECT.md`, link it from task templates, and test the next handoff. Do not paste the answer into multiple prompts.
+Если агенты повторно спрашивают, как одобряются выпуски, добавьте одно правило полномочий в `PROJECT.md`, свяжите его из шаблонов задач и протестируйте следующую передачу работы. Не вставляйте ответ в несколько промптов.
 
-## Anti-patterns
+## Антипаттерны
 
-- Maximum documentation before the first feedback cycle.
-- Role proliferation without distinct outputs.
-- Retrospectives that produce no rule, task, or experiment.
-- Optimizing agent autonomy instead of project outcomes.
+- Максимум документации до первого цикла обратной связи.
+- Разрастание ролей без различных выходов.
+- Ретроспективы, не порождающие ни правила, ни задачи, ни эксперимента.
+- Оптимизация автономии агента вместо результатов проекта.
 
-## Best practices
+## Лучшие практики
 
-Measure lead time, rework rate, escaped defects, stale knowledge, unresolved decisions, and cold-start recovery success. Remove artifacts whose maintenance cost exceeds their decision value.
+Измерять время выполнения, долю переделок, пропущенные дефекты, устаревшее знание, нерешённые решения и успех восстановления из холодного старта. Удалять артефакты, чья стоимость сопровождения превышает их ценность для решений.
 
-## Related specifications
+## Связанные спецификации
 
-All VECTRA specifications, especially [VECTRA-002](VECTRA-002-workflow.md), [VECTRA-007](VECTRA-007-success-contracts.md), and [VECTRA-012](VECTRA-012-knowledge-management.md).
+Все спецификации VECTRA, особенно [VECTRA-002](VECTRA-002-workflow.md), [VECTRA-007](VECTRA-007-success-contracts.md) и [VECTRA-012](VECTRA-012-knowledge-management.md).

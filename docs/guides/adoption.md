@@ -1,34 +1,34 @@
-# Adoption guide
+# Руководство по внедрению
 
-This guide is informative; the specifications remain authoritative.
+Это руководство носит справочный характер; нормативными остаются спецификации.
 
-## Minimal Core adoption
+## Минимальное внедрение уровня «Базовый»
 
-For an existing project, the adopting agent MUST first inspect repository structure, documentation, implementation, tests, Git history when available, and recorded issues. It MUST separate verified observations from inferences and MUST NOT modify the project during discovery unless the owner explicitly authorizes it.
+Для существующего проекта внедряющий агент ОБЯЗАН сначала изучить структуру репозитория, документацию, реализацию, тесты, историю Git при её наличии и зафиксированные проблемы. Он ОБЯЗАН отделять проверенные наблюдения от выводов, и ему ЗАПРЕЩЕНО изменять проект во время обследования, если владелец явно этого не разрешил.
 
-After discovery:
+После обследования:
 
-1. Present a concise inventory of verified state, uncertainties, contradictions, and risks.
-2. Ask the owner only for material information that cannot be discovered reliably; ask one focused question at a time.
-3. Declare Vectra `0.1.0` in `PROJECT.md`.
-4. Name one accountable owner and define approval boundaries.
-5. Create current `MEMORY.md` and a decision directory.
-6. Run one task using the full lifecycle in `TASK.md`.
-7. Define acceptance evidence before executing.
-8. Close by updating memory and testing cold-start recovery.
+1. Представить краткую опись проверенного состояния, неопределённостей, противоречий и рисков.
+2. Запрашивать у владельца только значимую информацию, которую нельзя надёжно установить самостоятельно; задавать по одному сфокусированному вопросу за раз.
+3. Объявить Vectra `0.1.0` в `PROJECT.md`.
+4. Назначить одного ответственного владельца и определить границы согласования.
+5. Создать актуальный `MEMORY.md` и каталог решений.
+6. Выполнить одну задачу по полному жизненному циклу в `TASK.md`.
+7. Определить свидетельства приёмки до начала выполнения.
+8. Завершить обновлением памяти и проверкой восстановления с холодного старта.
 
-For a new project, discovery is replaced by an owner interview covering outcome, users, non-goals, constraints, risks, priorities, authority, and project-level exit criteria. Implementation begins only after the owner approves the initial project contract.
+Для нового проекта обследование заменяется интервью с владельцем, охватывающим результат, пользователей, антицели, ограничения, риски, приоритеты, полномочия и критерии выхода на уровне проекта. Реализация начинается только после того, как владелец утвердит первоначальный контракт проекта.
 
-## Maturity levels
+## Уровни зрелости
 
-| Level | Use when | Added controls |
+| Уровень | Когда применять | Добавляемые механизмы контроля |
 |---|---|---|
-| Core | one owner, low/moderate risk | project, task, memory, decisions, validation |
-| Coordinated | several agents or teams | roles, assignment envelopes, integration owner, status |
-| Assured | high-impact or regulated | independent review, risk register, traceable evidence, retention policy |
+| Базовый | один владелец, низкий или умеренный риск | проект, задача, память, решения, проверка |
+| Скоординированный | несколько агентов или команд | роли, границы назначений, владелец интеграции, статус |
+| Гарантированный | высокое влияние или регулируемая среда | независимое ревью, реестр рисков, прослеживаемые свидетельства, политика хранения |
 
-Do not adopt every artifact preemptively. Add a record when its absence causes ambiguity, rework, risk, or failed recovery.
+Не внедряйте все артефакты заранее. Добавляйте запись, когда её отсутствие ведёт к неоднозначности, доработке, риску или неудачному восстановлению.
 
-## Cold-start conformance exercise
+## Упражнение на соответствие при холодном старте
 
-Give a new agent repository access and only: “Resume the highest-priority active task under VECTRA.” It succeeds when the agent identifies authority, current state, next action, validation, and stop conditions without chat history. Record missing knowledge as documentation debt.
+Предоставьте новому агенту доступ к репозиторию и только фразу: «Продолжи активную задачу с наивысшим приоритетом в рамках VECTRA.» Упражнение успешно, когда агент определяет полномочия, текущее состояние, следующее действие, проверку и условия остановки без истории переписки. Недостающие знания фиксируйте как долг документации.

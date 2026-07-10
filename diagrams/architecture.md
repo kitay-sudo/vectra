@@ -1,16 +1,16 @@
-# Architecture
+# Архитектура
 
 ```mermaid
 flowchart TB
-  O["Owner authority"] --> C["Constitution and project contract"]
-  C --> W["VECTRA workflow engine"]
-  W --> T["Tasks and success contracts"]
-  W --> A["Agent roles"]
-  A --> X["Changed project artifacts"]
-  X --> Q["Validation and review evidence"]
-  Q --> D["Decisions"]
-  Q --> M["Permanent memory"]
-  D --> K["Knowledge graph"]
+  O["Полномочия владельца"] --> C["Конституция и контракт проекта"]
+  C --> W["Движок рабочего цикла VECTRA"]
+  W --> T["Задачи и контракты успеха"]
+  W --> A["Роли агентов"]
+  A --> X["Изменённые артефакты проекта"]
+  X --> Q["Свидетельства проверки и ревью"]
+  Q --> D["Решения"]
+  Q --> M["Постоянная память"]
+  D --> K["Граф знаний"]
   M --> K
   K --> W
 ```

@@ -1,17 +1,17 @@
-# Workflow
+# Рабочий цикл
 
 ```mermaid
 stateDiagram-v2
   [*] --> Intake
   Intake --> Context
-  Context --> Planned: sufficient and authorized
-  Context --> Blocked: unsafe unknown
-  Planned --> Executing: plan permitted
-  Executing --> Validating: checkpoint complete
-  Validating --> Review: evidence collected
-  Validating --> Planned: check fails
-  Review --> Planned: rework
-  Review --> Accepted: criteria satisfied
-  Accepted --> Closed: memory synchronized
-  Blocked --> Context: unblock condition met
+  Context --> Planned: достаточно и санкционировано
+  Context --> Blocked: небезопасная неизвестность
+  Planned --> Executing: план разрешён
+  Executing --> Validating: контрольная точка завершена
+  Validating --> Review: свидетельства собраны
+  Validating --> Planned: проверка не пройдена
+  Review --> Planned: доработка
+  Review --> Accepted: критерии выполнены
+  Accepted --> Closed: память синхронизирована
+  Blocked --> Context: условие разблокировки выполнено
 ```

@@ -1,13 +1,13 @@
-# Project lifecycle
+# Жизненный цикл проекта
 
 ```mermaid
 flowchart LR
-  D["Define contract"] --> A["Adopt VECTRA profile"]
-  A --> B["Build prioritized backlog"]
-  B --> L["Run bounded loops"]
-  L --> R["Release accepted increment"]
-  R --> E["Evaluate outcome"]
-  E -->|continue| B
-  E -->|goal met| C["Close and archive"]
-  E -->|premise changed| D
+  D["Определить контракт"] --> A["Принять профиль VECTRA"]
+  A --> B["Собрать приоритизированный бэклог"]
+  B --> L["Выполнять ограниченные циклы"]
+  L --> R["Выпустить принятый инкремент"]
+  R --> E["Оценить результат"]
+  E -->|продолжить| B
+  E -->|цель достигнута| C["Закрыть и архивировать"]
+  E -->|предпосылка изменилась| D
 ```

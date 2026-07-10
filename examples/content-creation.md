@@ -1,7 +1,7 @@
-# Content creation profile
+# Профиль создания контента
 
-**Goal:** produce a six-part technical article series. **Authority:** editor decides audience, claims, voice, and publication; Researcher gathers sources; Writer drafts; subject Reviewer verifies claims.
+**Цель:** подготовить серию технических статей из шести частей. **Полномочия:** редактор определяет аудиторию, заявления, тон и публикацию; Исследователь собирает источники; Автор готовит черновики; профильный Ревьюер проверяет заявления.
 
-Each article is one loop with an approved brief, source manifest, claim-level citations, editorial review, fact check, revision, and learning update. Success covers accuracy, originality, accessibility, disclosure, and channel requirements. Historical drafts remain history; the approved article is canonical.
+Каждая статья — один цикл с утверждённым брифом, манифестом источников, ссылками на источники на уровне заявлений, редакторской проверкой, проверкой фактов, доработкой и обновлением извлечённых уроков. Успех охватывает точность, оригинальность, доступность, раскрытие информации и требования канала. Исторические черновики остаются историей; утверждённая статья канонична.
 
-Anti-pattern: accepting invented citations or treating tone approval as factual review.
+Антипаттерн: принимать выдуманные ссылки на источники или считать одобрение тона фактической проверкой.

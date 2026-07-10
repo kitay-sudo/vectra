@@ -1,27 +1,29 @@
-# Changelog
+# История изменений
 
-All notable changes follow Keep a Changelog. Versions follow Semantic Versioning.
+Все значимые изменения ведутся по Keep a Changelog. Версии — по Semantic Versioning.
 
-## [Unreleased]
+## [Не выпущено]
 
-### Changed
+### Изменено
 
-- Reworked `README.md` into an engineer-facing entry point with copy-ready flows for existing projects, new projects, and context recovery.
-- Required repository discovery before an owner interview when adopting an existing project.
-- Clarified how verified problems, completed work, decisions, and reusable learning become durable project memory.
+- `README.md` переработан в точку входа для инженеров: готовые к копированию сценарии для существующих проектов, новых проектов и восстановления контекста.
+- Требуется обследование репозитория перед интервью с владельцем при адаптации существующего проекта.
+- Уточнено, как проверенные проблемы, выполненная работа, решения и переиспользуемые уроки становятся долговременной памятью проекта.
 
-### Added
+### Добавлено
 
-- Responsive black-and-white landing page with modular workflow explanation, project-memory overview, and copy-ready starter commands.
-- GitHub Pages deployment workflow for the static site.
-- Engineer-focused lifecycle section, structured section dividers, author links, and a consistent inline SVG icon system.
+- Установка рабочих документов одной командой через `install.sh` / `install.ps1` и манифест `install/manifest.txt`.
+- Шаблон правил агента `templates/AGENTS.md`.
+- Адаптивная чёрно-белая посадочная страница с модульным описанием рабочего цикла, обзором памяти проекта и готовыми к копированию стартовыми командами.
+- Процесс развёртывания статического сайта через GitHub Pages.
+- Раздел жизненного цикла для инженеров, структурные разделители секций, ссылки на авторов и единая система встроенных SVG-иконок.
 
 ## [0.1.0] - 2026-07-10
 
-### Added
+### Добавлено
 
-- Initial VECTRA standard: specifications VECTRA-000 through VECTRA-014.
-- Artifact-driven iterative operating loop and transition gates.
-- Reusable project, task, decision, question, status, memory, research, risk, review, meeting, retrospective, bug, and change templates.
-- Domain adoption profiles and Mermaid diagrams.
-- Conformance and internal-link validation.
+- Первоначальный стандарт VECTRA: спецификации VECTRA-000 — VECTRA-014.
+- Итеративный рабочий цикл на основе артефактов и шлюзы перехода.
+- Переиспользуемые шаблоны проекта, задачи, решения, вопроса, статуса, памяти, исследования, риска, ревью, встречи, ретроспективы, дефекта и изменения.
+- Профили адаптации под предметные области и диаграммы Mermaid.
+- Проверка соответствия и внутренних ссылок.

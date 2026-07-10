@@ -1,29 +1,29 @@
 ---
 id: BUG-NNN
 status: confirmed
-severity: "[impact scale]"
-owner: "[triage owner]"
+severity: "[шкала влияния]"
+owner: "[владелец сортировки]"
 found: YYYY-MM-DD
 ---
 
-# [Observed failure]
+# [Наблюдаемый отказ]
 
-## Impact and affected scope
+## Влияние и затронутые границы
 
-[Who/what is affected, frequency, safety/data implications.]
+[Кто/что затронут, частота, последствия для безопасности/данных.]
 
-## Reproduction
+## Воспроизведение
 
-[Preconditions, minimal steps, observed result, expected result.]
+[Предусловия, минимальные шаги, наблюдаемый результат, ожидаемый результат.]
 
-## Evidence and environment
+## Свидетельства и окружение
 
-[Logs/screenshots/versions with secrets removed.]
+[Логи/скриншоты/версии с удалёнными секретами.]
 
-## Triage
+## Сортировка
 
-[Root cause status, containment, priority rationale, related task/risk.]
+[Статус первопричины, локализация, обоснование приоритета, связанная задача/риск.]
 
-## Closure evidence
+## Свидетельства закрытия
 
-[Fix, regression check, validation, memory update.]
+[Исправление, проверка на регрессию, валидация, обновление памяти.]

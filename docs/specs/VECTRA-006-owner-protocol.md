@@ -1,43 +1,43 @@
-# VECTRA-006: Owner Protocol
+# VECTRA-006: Протокол владельца
 
-**Status:** Draft · **Version:** 0.1.0 · **Normative:** Yes
+**Статус:** Черновик · **Версия:** 0.1.0 · **Нормативный:** Да
 
-## Purpose
+## Назначение
 
-Define human accountability in an AI-operated project.
+Определить ответственность человека в проекте, управляемом ИИ.
 
-## Definitions
+## Определения
 
-- **Owner:** accountable human or governance body.
-- **Approval boundary:** class of action requiring explicit owner authorization.
-- **Priority order:** documented ordering used when work competes.
+- **Владелец:** ответственный человек или орган управления.
+- **Граница одобрения:** класс действий, требующих явной авторизации владельца.
+- **Порядок приоритетов:** документированное упорядочивание, используемое, когда работы конкурируют.
 
-## Rules
+## Правила
 
-The owner MUST define project purpose, priorities, non-goals, risk tolerance, sensitive data policy, approval boundaries, and acceptance authority. The owner MUST NOT delegate accountability merely by delegating execution. Material ambiguity in goals or authority MUST be resolved by an owner or named delegate. Owner overrides SHOULD state which premise or priority changed.
+Владелец ОБЯЗАН определить назначение проекта, приоритеты, антицели, допустимый уровень риска, политику по чувствительным данным, границы одобрения и принимающего приёмку. Владельцу ЗАПРЕЩЕНО делегировать ответственность, лишь делегируя выполнение. Значимая неоднозначность в целях или полномочиях ОБЯЗАНА разрешаться владельцем или названным представителем. При переопределениях со стороны владельца СЛЕДУЕТ указывать, какая предпосылка или приоритет изменились.
 
-## Responsibilities
+## Ответственность
 
-Owners provide timely decisions, protect stakeholder interests, appoint qualified reviewers for high-risk domains, maintain access, and accept or reject outputs using declared criteria. They also retire obsolete rules so agents do not operate under contradictory instructions.
+Владельцы предоставляют своевременные решения, защищают интересы заинтересованных сторон, назначают квалифицированных ревьюеров для высокорисковых областей, поддерживают доступ и принимают или отклоняют результаты по объявленным критериям. Они также выводят из обращения устаревшие правила, чтобы агенты не работали по противоречивым инструкциям.
 
-## Workflow
+## Процесс
 
-At project start, publish the project contract and authority map. At intake, rank the request and name the acceptance authority. At escalation, answer the smallest decision that unblocks safe work. At review, assess evidence rather than fluency. At release, accept residual risks and verify that memory reflects the decision.
+В начале проекта опубликовать контракт проекта и карту полномочий. При приёме ранжировать запрос и назвать принимающего приёмку. При эскалации отвечать на наименьшее решение, разблокирующее безопасную работу. На ревью оценивать свидетельства, а не гладкость изложения. При релизе принять остаточные риски и убедиться, что память отражает решение.
 
-## Example
+## Пример
 
-The owner delegates documentation edits and local Git commits but retains authority for public publication and license changes.
+Владелец делегирует правки документации и локальные коммиты Git, но сохраняет полномочия на публичную публикацию и изменение лицензии.
 
-## Anti-patterns
+## Антипаттерны
 
-- Vague goals paired with strict deadlines.
-- Treating agent confidence as validation.
-- Changing acceptance criteria after delivery without a change record.
+- Расплывчатые цели в сочетании со строгими сроками.
+- Восприятие уверенности агента как валидации.
+- Изменение критериев приёмки после сдачи без записи об изменении.
 
-## Best practices
+## Лучшие практики
 
-Prefer durable written priorities, short approval service levels, and explicit “agent may decide” zones for reversible low-risk work.
+Предпочитать устойчивые письменные приоритеты, короткие сроки реакции на одобрение и явные зоны «агент может решать» для обратимой низкорисковой работы.
 
-## Related specifications
+## Связанные спецификации
 
-[VECTRA-001](VECTRA-001-constitution.md), [VECTRA-004](VECTRA-004-decisions.md), and [VECTRA-007](VECTRA-007-success-contracts.md).
+[VECTRA-001](VECTRA-001-constitution.md), [VECTRA-004](VECTRA-004-decisions.md) и [VECTRA-007](VECTRA-007-success-contracts.md).

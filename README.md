@@ -1,136 +1,194 @@
-# Vectra — AI Project Operating System
+# Vectra — операционная система проекта для работы с AI
 
-**Version:** 0.1.0  
-**Status:** Draft standard
+**Версия:** 0.1.0  
+**Статус:** Черновик стандарта  
+**Сайт:** <https://kitay-sudo.github.io/vectra/>
 
-Vectra is a model-independent way to run long-lived projects with AI agents. The project stores its goals, tasks, decisions, problems, evidence, and memory in versioned files, so work can continue after a chat ends or an agent is replaced.
+Vectra — независимый от модели способ вести долгие проекты вместе с AI-агентами. Проект хранит цели, задачи, решения, проблемы, свидетельства и память в версионируемых файлах, поэтому работа продолжается после того, как чат закончился или агента заменили.
 
-Vectra is not a prompt library. A prompt starts the process; project artifacts and the loop govern what happens next.
+Vectra — не библиотека промптов. Промпт запускает процесс; дальше происходящим управляют артефакты проекта и рабочий цикл.
 
-## Quick start
+## Установка одной командой
 
-Use Vectra files inside the project the agent will work on:
+Команда приносит в проект **только рабочие документы**: контракт проекта, память, правила агента и шаблоны записей. Репозиторий не клонируется.
 
-```text
-your-project/
-├── PROJECT.md       # goals, constraints, authority, Definition of Done
-├── MEMORY.md        # verified current knowledge and recurring lessons
-├── tasks/           # active and completed task records
-└── decisions/       # durable decisions and trade-offs
+```sh
+curl -fsSL https://raw.githubusercontent.com/kitay-sudo/vectra/main/install.sh | sh
 ```
 
-### Existing project
+Windows, PowerShell:
 
-Copy `templates/PROJECT.md` and `templates/MEMORY.md` into the repository, then give the agent this command:
-
-```text
-Adopt this existing project using Vectra 0.1.0.
-
-Before asking me questions, inspect the repository: structure, documentation,
-current implementation, Git history when available, tests, open problems, and
-existing decisions. Do not change project files yet.
-
-Summarize what you verified, what remains uncertain, and what appears risky.
-Then interview me one question at a time to complete PROJECT.md. Use evidence
-from the repository instead of asking me for facts you can discover yourself.
-Prepare PROJECT.md and MEMORY.md for my review; do not treat them as approved
-until I confirm them.
+```powershell
+irm https://raw.githubusercontent.com/kitay-sudo/vectra/main/install.ps1 | iex
 ```
 
-The agent MUST inspect the actual project before the owner interview. The interview fills only gaps that cannot be established safely from project evidence.
-
-### New project
-
-Start in an empty repository with this command:
+После установки:
 
 ```text
-Initialize this new project using Vectra 0.1.0.
-
-Interview me one question at a time about the outcome, users, non-goals,
-constraints, risks, priorities, and approval boundaries. Offer concrete options
-when useful. Then create PROJECT.md and an initial MEMORY.md from the Vectra
-templates. Show me both files for approval before starting implementation.
-After approval, create the first bounded TASK.md with measurable acceptance
-criteria and execute it through the Vectra loop.
+ваш-проект/
+├── PROJECT.md          # цели, ограничения, полномочия, критерии готовности
+├── MEMORY.md           # проверенные знания и повторяющиеся уроки
+├── tasks/              # записи активных и закрытых задач
+├── decisions/          # устойчивые решения и компромиссы
+└── vectra/
+    ├── AGENTS.md       # правила агента: цикл, полномочия, приёмка
+    ├── VERSION         # версия стандарта, по которой живёт проект
+    └── templates/      # TASK.md, DECISION.md, STATUS.md
 ```
 
-### Continue work in a new chat
+### Что команда не тянет
+
+Осознанное ограничение: в рабочий проект попадает то, чем в нём работают, а не то, что описывает сам стандарт.
+
+| Не скачивается | Почему |
+|---|---|
+| `diagrams/` | иллюстрируют стандарт, не участвуют в работе |
+| `site/` | лендинг проекта Vectra |
+| `docs/specs/`, `docs/guides/` | норматив целиком; выжимка уже в `vectra/AGENTS.md` |
+| `examples/` | доменные профили для чтения, а не для копирования |
+| `.github/`, `scripts/` | CI и проверки самого репозитория |
+| `CHANGELOG.md`, `ROADMAP.md`, `CONTRIBUTING.md` | история и правила разработки стандарта |
+
+Существующие файлы не перезаписываются: если в проекте уже есть `PROJECT.md`, установщик его пропустит и сообщит об этом.
+
+### Опции
+
+Аргументы передаются после `-s --` для `sh` и напрямую для PowerShell.
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/kitay-sudo/vectra/main/install.sh | sh -s -- --profile full --dir ./service
+```
+
+```powershell
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/kitay-sudo/vectra/main/install.ps1))) -Profile full -Dir ./service
+```
+
+| Опция | Значение |
+|---|---|
+| `--profile core` | рабочий минимум: `PROJECT`, `MEMORY`, `TASK`, `DECISION`, `STATUS`, `AGENTS`. По умолчанию |
+| `--profile full` | плюс условные шаблоны: вопросы, риски, ретроспективы, баг-репорты и остальные |
+| `--dir <путь>` | каталог проекта, по умолчанию текущий |
+| `--ref <ref>` | тег, ветка или коммит стандарта, по умолчанию `main` |
+| `--force` | перезаписывать существующие файлы |
+
+Состав каждого профиля задаётся одним файлом — [install/manifest.txt](install/manifest.txt). Его читают оба установщика и проверка целостности репозитория, поэтому расхождение между документацией и реальной установкой невозможно.
+
+Чтобы закрепить версию стандарта, укажите тег: `--ref v0.1.0`.
+
+## Быстрый старт
+
+### Существующий проект
+
+Установите файлы и дайте агенту команду:
 
 ```text
-Resume this project under Vectra. Read PROJECT.md, MEMORY.md, active tasks,
-applicable decisions, and current repository state. Identify the highest-priority
-ready task, its current lifecycle state, the next permitted action, and required
-validation. Continue only within recorded authority. Update task state and memory
-before stopping.
+Подключи этот проект к Vectra 0.1.0. Прочитай vectra/AGENTS.md.
+
+До вопросов изучи репозиторий: структуру, документацию, текущую реализацию,
+историю Git, тесты, открытые проблемы и принятые решения. Пока ничего не меняй.
+
+Опиши, что ты проверил, что осталось неизвестным и что выглядит рискованным.
+Затем задавай мне по одному вопросу, чтобы заполнить PROJECT.md. Опирайся на
+свидетельства из репозитория вместо вопросов о том, что можешь узнать сам.
+Подготовь PROJECT.md и MEMORY.md на моё рассмотрение; не считай их
+утверждёнными, пока я не подтвержу.
 ```
 
-## Project memory
+Агент ОБЯЗАН изучить проект до интервью с владельцем. Интервью закрывает только те пробелы, которые нельзя безопасно установить по свидетельствам репозитория.
 
-Agents do not reliably remember earlier chats. Vectra gives the **project** durable memory:
+### Новый проект
 
-- `PROJECT.md` stores the current goal, constraints, authority, and success measures.
-- `TASK.md` records what was attempted, what changed, validation evidence, failures, and the next action.
-- `DECISION.md` preserves important choices, rejected alternatives, and trade-offs.
-- `MEMORY.md` stores verified facts, recurring problems, constraints, and lessons that remain useful.
-- Git history preserves when and why these records changed.
+```text
+Создай новый проект по Vectra 0.1.0. Прочитай vectra/AGENTS.md.
 
-An agent MUST update these artifacts after accepted work. It MUST distinguish verified facts from assumptions, keep provenance, mark superseded knowledge, and never use chat transcripts as the source of truth. A replacement agent should be able to resume using repository state alone.
+Проведи интервью по одному вопросу за раз: результат, пользователи, антицели,
+ограничения, риски, приоритеты и границы полномочий. Предлагай конкретные
+варианты, когда это уместно. Затем создай PROJECT.md и начальный MEMORY.md
+из шаблонов Vectra. Покажи оба файла на утверждение до начала реализации.
+После утверждения заведи первую ограниченную задачу tasks/TASK-001.md
+с измеримыми критериями приёмки и выполни её по циклу Vectra.
+```
 
-## Operating loop
+### Продолжение в новом чате
+
+```text
+Продолжи этот проект по Vectra. Прочитай vectra/AGENTS.md, PROJECT.md,
+MEMORY.md, активные задачи, применимые решения и текущее состояние
+репозитория. Определи приоритетную готовую задачу, её состояние жизненного
+цикла, следующее разрешённое действие и требуемую проверку. Продолжай только
+в рамках записанных полномочий. Перед остановкой обнови состояние задачи
+и память.
+```
+
+## Память проекта
+
+Агенты не помнят прошлые чаты надёжно. Vectra даёт устойчивую память **проекту**:
+
+- `PROJECT.md` хранит текущую цель, ограничения, полномочия и меры успеха.
+- `TASK.md` фиксирует, что было предпринято, что изменилось, какие свидетельства собраны, что отказало и каким будет следующее действие.
+- `DECISION.md` сохраняет важные выборы, отвергнутые альтернативы и компромиссы.
+- `MEMORY.md` хранит проверенные факты, повторяющиеся проблемы, ограничения и уроки, которые остаются полезными.
+- История Git сохраняет, когда и почему эти записи менялись.
+
+Агент ОБЯЗАН обновлять эти артефакты после принятой работы. Он ОБЯЗАН отличать проверенные факты от допущений, хранить происхождение знания, помечать замещённое и никогда не использовать переписку как источник правды. Замещающий агент должен продолжить работу, имея только состояние репозитория.
+
+## Рабочий цикл
 
 ```mermaid
 flowchart LR
-  I[Intake] --> C[Build context]
-  C --> P[Plan]
-  P --> E[Execute bounded change]
-  E --> V[Validate]
-  V --> R[Review]
-  R -->|accepted| M[Update memory]
-  R -->|rework| P
-  M --> N[Select next task]
+  I[Приём] --> C[Сбор контекста]
+  C --> P[План]
+  P --> E[Ограниченное изменение]
+  E --> V[Проверка]
+  V --> R[Ревью]
+  R -->|принято| M[Обновление памяти]
+  R -->|доработка| P
+  M --> N[Выбор задачи]
   N --> C
-  N -->|goal met| X[Close]
+  N -->|цель достигнута| X[Закрытие]
 ```
 
-Every loop consumes explicit inputs, produces durable outputs, and has entry and exit criteria. See [VECTRA-002](docs/specs/VECTRA-002-workflow.md).
+Каждая итерация потребляет явные входы, производит устойчивые выходы и имеет условия входа и выхода. См. [VECTRA-002](docs/specs/VECTRA-002-workflow.md).
 
-For the smallest useful adoption, start with [PROJECT.md](templates/PROJECT.md), [MEMORY.md](templates/MEMORY.md), and one [TASK.md](templates/TASK.md). Add other templates only when the project needs them. See the [adoption guide](docs/guides/adoption.md) for maturity levels.
+Минимальное полезное внедрение — [PROJECT.md](templates/PROJECT.md), [MEMORY.md](templates/MEMORY.md), [AGENTS.md](templates/AGENTS.md) и одна [TASK.md](templates/TASK.md). Остальные шаблоны добавляйте, когда проект в них упрётся. Уровни зрелости описаны в [руководстве по внедрению](docs/guides/adoption.md).
 
-## Specification index
+## Индекс спецификаций
 
-| ID | Specification | Normative subject |
+| ID | Спецификация | Предмет нормирования |
 |---|---|---|
-| 000 | [Manifest](docs/specs/VECTRA-000-manifest.md) | scope, philosophy, compatibility |
-| 001 | [Constitution](docs/specs/VECTRA-001-constitution.md) | authority and non-negotiable rules |
-| 002 | [Workflow](docs/specs/VECTRA-002-workflow.md) | iterative state machine |
-| 003 | [Memory](docs/specs/VECTRA-003-memory.md) | external project memory |
-| 004 | [Decisions](docs/specs/VECTRA-004-decisions.md) | decision records and trade-offs |
-| 005 | [Agent Protocol](docs/specs/VECTRA-005-agent-protocol.md) | agent entry, operation, reporting, recovery |
-| 006 | [Owner Protocol](docs/specs/VECTRA-006-owner-protocol.md) | human ownership and approvals |
-| 007 | [Success Contracts](docs/specs/VECTRA-007-success-contracts.md) | acceptance and exit conditions |
-| 008 | [Agent Roles](docs/specs/VECTRA-008-agent-roles.md) | bounded responsibilities |
-| 009 | [Context Engineering](docs/specs/VECTRA-009-context-engineering.md) | deterministic context assembly |
-| 010 | [Multi-Agent Collaboration](docs/specs/VECTRA-010-multi-agent-collaboration.md) | delegation and conflict handling |
-| 011 | [Quality Assurance](docs/specs/VECTRA-011-quality-assurance.md) | evidence-based verification |
-| 012 | [Knowledge Management](docs/specs/VECTRA-012-knowledge-management.md) | knowledge lifecycle and graph |
-| 013 | [Prompt Interfaces](docs/specs/VECTRA-013-prompt-interfaces.md) | optional interaction adapters |
-| 014 | [Best Practices](docs/specs/VECTRA-014-best-practices.md) | operational recommendations |
+| 000 | [Манифест](docs/specs/VECTRA-000-manifest.md) | границы, философия, совместимость |
+| 001 | [Конституция](docs/specs/VECTRA-001-constitution.md) | полномочия и правила без исключений |
+| 002 | [Рабочий цикл](docs/specs/VECTRA-002-workflow.md) | итеративный конечный автомат |
+| 003 | [Память](docs/specs/VECTRA-003-memory.md) | внешняя память проекта |
+| 004 | [Решения](docs/specs/VECTRA-004-decisions.md) | записи решений и компромиссы |
+| 005 | [Протокол агента](docs/specs/VECTRA-005-agent-protocol.md) | вход, работа, отчётность, восстановление |
+| 006 | [Протокол владельца](docs/specs/VECTRA-006-owner-protocol.md) | владение и подтверждения |
+| 007 | [Контракты успеха](docs/specs/VECTRA-007-success-contracts.md) | приёмка и условия выхода |
+| 008 | [Роли агентов](docs/specs/VECTRA-008-agent-roles.md) | ограниченные зоны ответственности |
+| 009 | [Инженерия контекста](docs/specs/VECTRA-009-context-engineering.md) | детерминированная сборка контекста |
+| 010 | [Взаимодействие агентов](docs/specs/VECTRA-010-multi-agent-collaboration.md) | делегирование и разрешение конфликтов |
+| 011 | [Обеспечение качества](docs/specs/VECTRA-011-quality-assurance.md) | проверка на свидетельствах |
+| 012 | [Управление знаниями](docs/specs/VECTRA-012-knowledge-management.md) | жизненный цикл знания и граф |
+| 013 | [Промпт-интерфейсы](docs/specs/VECTRA-013-prompt-interfaces.md) | опциональные адаптеры взаимодействия |
+| 014 | [Лучшие практики](docs/specs/VECTRA-014-best-practices.md) | операционные рекомендации |
 
-## Conformance
+## Соответствие
 
-A project is **Vectra Core conformant** when it declares its Vectra version, assigns an owner, maintains project/task/memory/decision artifacts, uses explicit success contracts, performs validation before completion, and can resume from repository state without conversation history. Optional multi-agent and prompt-interface features do not affect Core conformance.
+Проект **соответствует ядру Vectra**, когда он объявляет версию Vectra, назначает владельца, ведёт артефакты проекта, задач, памяти и решений, использует явные контракты успеха, выполняет проверку до завершения работы и может продолжиться из состояния репозитория без истории переписки. Опциональные возможности — мультиагентность и промпт-интерфейсы — на соответствие ядру не влияют.
 
-Normative words **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** follow RFC 2119 meanings.
+Нормативные слова **ОБЯЗАН**, **ЗАПРЕЩЕНО**, **СЛЕДУЕТ**, **НЕ СЛЕДУЕТ** и **МОЖЕТ** имеют значения из RFC 2119.
 
-## Repository map
+## Карта репозитория
 
-- `docs/specs/` — normative specifications.
-- `docs/guides/` — adoption and migration guidance.
-- `templates/` — controlled operational records.
-- `examples/` — domain profiles showing concrete application.
-- `diagrams/` — source Mermaid diagrams.
-- `scripts/` — repository integrity checks.
+- `docs/specs/` — нормативные спецификации.
+- `docs/guides/` — внедрение и миграция.
+- `templates/` — управляемые операционные записи.
+- `install/` — манифест установки рабочих документов.
+- `examples/` — доменные профили с конкретным применением.
+- `diagrams/` — исходные диаграммы Mermaid.
+- `scripts/` — проверки целостности репозитория.
+- `site/` — исходники лендинга.
 
-## License
+## Лицензия
 
-Documentation and templates are licensed under [CC BY 4.0](LICENSE).
+Документация и шаблоны распространяются по лицензии [CC BY 4.0](LICENSE).

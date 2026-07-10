@@ -1,9 +1,9 @@
-# Versioning and migration
+# Версионирование и миграция
 
-Vectra releases use Semantic Versioning. Projects declare the version they implement; documents declare the version under which their obligations were written.
+Релизы Vectra используют семантическое версионирование. Проекты объявляют версию, которую реализуют; документы объявляют версию, под которую написаны их обязательства.
 
-- Patch: clarification with no new project obligation.
-- Minor: backward-compatible capability or obligation with a migration path.
-- Major: incompatible lifecycle, authority, artifact, or conformance change.
+- Патч: уточнение без новых обязательств для проекта.
+- Минорная: обратно совместимая возможность или обязательство с путём миграции.
+- Мажорная: несовместимое изменение жизненного цикла, полномочий, артефакта или соответствия.
 
-To upgrade, inventory local specializations, read the changelog, compare changed normative statements, create a change request, update artifacts and automation, run conformance checks, perform a cold-start exercise, then record the accepted version in `PROJECT.md`. Mixed-version operation MUST be temporary and documented.
+Для обновления составьте опись локальных доработок, прочитайте журнал изменений, сравните изменённые нормативные положения, создайте запрос на изменение, обновите артефакты и автоматизацию, выполните проверки соответствия, проведите упражнение с холодного старта, затем зафиксируйте принятую версию в `PROJECT.md`. Работа со смешанными версиями ОБЯЗАНА быть временной и документированной.

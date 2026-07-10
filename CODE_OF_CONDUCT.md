@@ -1,5 +1,5 @@
-# Code of Conduct
+# Кодекс поведения
 
-Participants MUST communicate respectfully, critique ideas rather than people, disclose relevant conflicts of interest, protect private project information, and accept documented maintainer decisions. Harassment, intimidation, discrimination, doxxing, and knowingly misleading evidence are prohibited.
+Участники ОБЯЗАНЫ общаться уважительно, критиковать идеи, а не людей, раскрывать значимые конфликты интересов, защищать закрытую информацию проекта и принимать задокументированные решения сопровождающих. Домогательства, запугивание, дискриминация, разглашение личных данных (doxxing) и заведомо вводящие в заблуждение свидетельства запрещены.
 
-Report incidents privately to the repository owner or designated moderation address. Maintainers will acknowledge reports, assess evidence with confidentiality, avoid conflicted reviewers, and choose proportionate action ranging from correction to permanent exclusion.
+Сообщайте об инцидентах приватно владельцу репозитория или назначенному адресу модерации. Сопровождающие подтвердят получение сообщений, оценят свидетельства с соблюдением конфиденциальности, исключат ревьюеров с конфликтом интересов и выберут соразмерное действие — от исправления до постоянного исключения.

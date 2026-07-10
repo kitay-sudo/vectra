@@ -1,44 +1,44 @@
-# VECTRA-007: Success Contracts
+# VECTRA-007: Контракты успеха
 
-**Status:** Draft · **Version:** 0.1.0 · **Normative:** Yes
+**Статус:** Черновик · **Версия:** 0.1.0 · **Нормативный:** Да
 
-## Purpose
+## Назначение
 
-Make completion falsifiable through acceptance criteria, exit criteria, failure conditions, and evidence.
+Сделать завершение фальсифицируемым через критерии приёмки, критерии выхода, условия отказа и свидетельства.
 
-## Definitions
+## Определения
 
-- **Acceptance criterion:** observable property of an output.
-- **Definition of Done (DoD):** reusable quality obligations for a class of task.
-- **Exit criterion:** condition allowing a workflow or project phase to stop.
-- **Failure condition:** observation that invalidates success or requires escalation.
+- **Критерий приёмки:** наблюдаемое свойство результата.
+- **Критерии готовности (DoD):** переиспользуемые обязательства по качеству для класса задач.
+- **Критерий выхода:** условие, позволяющее остановить рабочий цикл или фазу проекта.
+- **Условие отказа:** наблюдение, аннулирующее успех или требующее эскалации.
 
-## Rules
+## Правила
 
-Every material task MUST have criteria before execution. Each criterion MUST name a validation method and expected evidence. Criteria MUST describe outcomes, not implementation effort. Completion requires all mandatory criteria, no unresolved failure condition, accepted residual risk, and synchronized memory. A waived criterion requires authorized rationale and an expiry or follow-up.
+Каждая значимая задача ОБЯЗАНА иметь критерии до выполнения. Каждый критерий ОБЯЗАН называть метод валидации и ожидаемое свидетельство. Критерии ОБЯЗАНЫ описывать результаты, а не трудозатраты на реализацию. Завершение требует всех обязательных критериев, отсутствия неразрешённых условий отказа, принятого остаточного риска и синхронизированной памяти. Отменённый критерий требует авторизованного обоснования и срока действия или последующего действия.
 
-## Responsibilities
+## Ответственность
 
-The requester states desired outcomes. The planner makes them testable. The executor produces evidence. The reviewer challenges evidence. The acceptance authority decides whether residual risk is acceptable.
+Заказчик излагает желаемые результаты. Планировщик делает их проверяемыми. Исполнитель производит свидетельства. Ревьюер оспаривает свидетельства. Принимающий приёмку решает, приемлем ли остаточный риск.
 
-## Workflow
+## Процесс
 
-Translate the goal into observable behavior; add quality, safety, compatibility, and documentation criteria; define evidence and responsible validator; enumerate failure signals; review feasibility; freeze the contract for the iteration; validate; record pass, fail, or authorized waiver; then close or re-enter planning.
+Перевести цель в наблюдаемое поведение; добавить критерии качества, безопасности, совместимости и документирования; определить свидетельства и ответственного валидатора; перечислить сигналы отказа; проверить осуществимость; заморозить контракт на итерацию; провести валидацию; зафиксировать успех, отказ или авторизованную отмену; затем закрыть или вернуться в планирование.
 
-## Example
+## Пример
 
-Weak: “Create complete docs.” Strong: “All 15 specification IDs exist; every spec contains the required sections; internal Markdown links resolve; version references agree; a cold-start agent can identify the next workflow state from the example project.”
+Слабо: «Создать полную документацию». Сильно: «Все 15 идентификаторов спецификаций существуют; каждая спецификация содержит требуемые секции; внутренние ссылки Markdown разрешаются; ссылки на версии согласованы; агент на холодном старте может определить следующее состояние рабочего цикла по примеру проекта».
 
-## Anti-patterns
+## Антипаттерны
 
-- “Looks good” as the only criterion.
-- Tests selected after seeing the output.
-- Conflating task closure with project success.
+- «Выглядит хорошо» как единственный критерий.
+- Тесты, выбранные после просмотра результата.
+- Смешение закрытия задачи с успехом проекта.
 
-## Best practices
+## Лучшие практики
 
-Use a small number of discriminating criteria, automate deterministic checks, and add human review where meaning or harm cannot be mechanically evaluated.
+Использовать небольшое число различающих критериев, автоматизировать детерминированные проверки и добавлять человеческое ревью там, где смысл или вред нельзя оценить механически.
 
-## Related specifications
+## Связанные спецификации
 
-[VECTRA-002](VECTRA-002-workflow.md), [VECTRA-006](VECTRA-006-owner-protocol.md), and [VECTRA-011](VECTRA-011-quality-assurance.md).
+[VECTRA-002](VECTRA-002-workflow.md), [VECTRA-006](VECTRA-006-owner-protocol.md) и [VECTRA-011](VECTRA-011-quality-assurance.md).

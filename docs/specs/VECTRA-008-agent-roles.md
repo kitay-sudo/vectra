@@ -1,58 +1,58 @@
-# VECTRA-008: Agent Roles
+# VECTRA-008: Роли агентов
 
-**Status:** Draft · **Version:** 0.1.0 · **Normative:** Yes
+**Статус:** Черновик · **Версия:** 0.1.0 · **Нормативный:** Да
 
-## Purpose
+## Назначение
 
-Define composable responsibility sets. Roles are accountability boundaries, not personas, prompts, or necessarily separate agents.
+Определить составляемые наборы ответственности. Роли — это границы подотчётности, а не персоны, промпты или обязательно отдельные агенты.
 
-## Definitions
+## Определения
 
-A **role** has a mission, inputs, outputs, limitations, and interactions. One agent MAY hold several compatible roles. High-risk maker and checker roles SHOULD be separated. Assignments MUST name task, scope, authority, deliverable, evidence, deadline or stop condition, and handoff recipient. A role does not inherit owner authority.
+**Роль** имеет миссию, входы, выходы, ограничения и взаимодействия. Один агент МОЖЕТ совмещать несколько совместимых ролей. Высокорисковые роли исполнителя и проверяющего СЛЕДУЕТ разделять. Назначение ОБЯЗАНО указывать задачу, границы, полномочия, результат, свидетельство, срок или условие остановки и получателя передачи работы. Роль не наследует полномочия владельца.
 
-## Rules
+### Каталог ролей
 
-Roles MUST be assigned as explicit responsibility sets, not simulated personalities. Every active role MUST have a bounded output, authority, and handoff. Role combination MUST remain visible, and a combined maker/checker MUST NOT be described as independent review.
-
-## Role catalog
-
-| Role | Mission and responsibilities | Inputs → outputs | Limitations and interactions |
+| Роль | Миссия и обязанности | Входы → выходы | Ограничения и взаимодействия |
 |---|---|---|---|
-| Architect | preserve system coherence; define boundaries and trade-offs | goals, constraints → architecture, decision proposals | does not authorize business priority; consults Owner and Reviewer |
-| Researcher | reduce a named uncertainty with sourced evidence | question, source policy → research record, confidence | does not convert inference to fact; hands to Architect/Analyst |
-| Developer | produce bounded technical changes | plan, acceptance → implementation, execution evidence | does not self-approve high-risk work; checked by Tester/Reviewer |
-| Reviewer | independently challenge correctness and conformance | change, contract, evidence → findings, verdict | must disclose conflicts; does not rewrite criteria retroactively |
-| Writer | create precise, navigable project knowledge | source facts, audience → documentation | cannot invent product behavior; validated by subject owner |
-| Designer | define usable visual or interaction behavior | user goals, constraints → design artifacts, rationale | does not infer accessibility compliance without evidence |
-| Analyst | turn data into bounded conclusions | question, data, assumptions → analysis and uncertainty | does not imply causation from correlation |
-| Tester | design and execute discriminating checks | acceptance, change → test evidence, defects | cannot waive failures; interacts with Developer and Reviewer |
-| Planner | decompose goals into ordered, testable increments | goals, constraints → plan, dependencies, risks | does not perform owner-only prioritization |
-| Coordinator | own task state, routing, and checkpoints | portfolio and status → assignments, handoffs | does not replace domain review or silently alter outputs |
-| Memory Manager | capture and reconcile durable project state | accepted learning → canonical memory updates | cannot promote unvalidated claims |
-| Knowledge Curator | maintain taxonomy, links, provenance, expiry | repository knowledge → coherent knowledge graph | does not decide subject truth without a qualified reviewer |
+| Архитектор | сохранять целостность системы; определять границы и компромиссы | цели, ограничения → архитектура, предложения решений | не утверждает бизнес-приоритеты; консультируется с владельцем и ревьюером |
+| Исследователь | снизить названную неопределённость свидетельствами с указанием источников | вопрос, политика источников → запись исследования, уверенность | не превращает вывод в факт; передаёт архитектору/аналитику |
+| Разработчик | производить ограниченные технические изменения | план, приёмка → реализация, свидетельство выполнения | не утверждает высокорисковую работу самостоятельно; проверяется тестировщиком/ревьюером |
+| Ревьюер | независимо оспаривать корректность и соответствие | изменение, контракт, свидетельство → замечания, вердикт | обязан раскрывать конфликты; не переписывает критерии задним числом |
+| Технический писатель | создавать точное, навигируемое знание проекта | исходные факты, аудитория → документация | не выдумывает поведение продукта; проверяется владельцем предметной области |
+| Дизайнер | определять пригодное к использованию визуальное или интерактивное поведение | цели пользователя, ограничения → артефакты дизайна, обоснование | не делает вывод о соответствии доступности без свидетельства |
+| Аналитик | превращать данные в ограниченные выводы | вопрос, данные, допущения → анализ и неопределённость | не выводит причинность из корреляции |
+| Тестировщик | проектировать и выполнять различающие проверки | приёмка, изменение → свидетельство тестов, дефекты | не может отменить отказы; взаимодействует с разработчиком и ревьюером |
+| Планировщик | раскладывать цели на упорядоченные, проверяемые приращения | цели, ограничения → план, зависимости, риски | не выполняет приоритизацию, доступную только владельцу |
+| Координатор | владеть состоянием задачи, маршрутизацией и контрольными точками | портфель и статус → назначения, передачи работы | не заменяет предметную проверку и не изменяет выходы незаметно |
+| Управляющий памятью | фиксировать и согласовывать устойчивое состояние проекта | принятое знание → канонические обновления памяти | не может продвигать непроверенные утверждения |
+| Куратор знаний | поддерживать таксономию, связи, происхождение, срок годности | знание репозитория → согласованный граф знаний | не решает истинность предмета без квалифицированного ревьюера |
 
-## Responsibilities
+## Правила
 
-The coordinator maintains an assignment ledger. Each assignee confirms inputs and returns artifacts, evidence, unresolved questions, and next recipient. The owner resolves incompatible responsibilities and approves elevated authority.
+Роли ОБЯЗАНЫ назначаться как явные наборы ответственности, а не имитируемые личности. Каждая активная роль ОБЯЗАНА иметь ограниченный выход, полномочия и передачу работы. Совмещение ролей ОБЯЗАНО оставаться видимым, а совмещённую роль исполнителя/проверяющего ЗАПРЕЩЕНО описывать как независимую проверку.
 
-## Workflow
+## Ответственность
 
-Determine the transition to be performed; select the minimum roles; check conflicts; issue bounded assignments; receive outputs through explicit handoffs; run required review; then release roles. Role reassignment MUST preserve the checkpoint and must not erase responsibility for earlier claims.
+Координатор ведёт реестр назначений. Каждый назначенный подтверждает входы и возвращает артефакты, свидетельства, нерешённые вопросы и следующего получателя. Владелец разрешает несовместимые обязанности и утверждает повышенные полномочия.
 
-## Example
+## Процесс
 
-For a schema change, the Architect proposes the boundary, Developer implements, Tester produces compatibility evidence, Reviewer assesses the contract, and Memory Manager records the accepted invariant. One low-risk agent may combine the first two roles; it may not claim independent review.
+Определить смену состояния, которую нужно выполнить; выбрать минимум ролей; проверить конфликты; выдать ограниченные назначения; получить выходы через явные передачи работы; провести требуемую проверку; затем освободить роли. Переназначение роли ОБЯЗАНО сохранять контрольную точку и не должно стирать ответственность за ранее сделанные утверждения.
 
-## Anti-patterns
+## Пример
 
-- Creating agents because role names exist.
-- Delegating the same mutable file to uncoordinated executors.
-- Treating a “Reviewer” label as evidence of independence.
+При изменении схемы данных архитектор предлагает границу, разработчик реализует, тестировщик производит свидетельство совместимости, ревьюер оценивает контракт, а управляющий памятью фиксирует принятый инвариант. Один низкорисковый агент может совмещать первые две роли; он не может заявлять независимую проверку.
 
-## Best practices
+## Антипаттерны
 
-Assign outputs rather than activity, minimize handoffs, and separate roles only where expertise, independence, or parallel throughput adds value.
+- Создание агентов только потому, что существуют названия ролей.
+- Делегирование одного и того же изменяемого файла несогласованным исполнителям.
+- Трактовка ярлыка «Ревьюер» как свидетельства независимости.
 
-## Related specifications
+## Лучшие практики
 
-[VECTRA-005](VECTRA-005-agent-protocol.md), [VECTRA-010](VECTRA-010-multi-agent-collaboration.md), and [VECTRA-011](VECTRA-011-quality-assurance.md).
+Назначать выходы, а не деятельность, минимизировать передачи работы и разделять роли только там, где экспертиза, независимость или параллельная пропускная способность добавляют ценность.
+
+## Связанные спецификации
+
+[VECTRA-005](VECTRA-005-agent-protocol.md), [VECTRA-010](VECTRA-010-multi-agent-collaboration.md) и [VECTRA-011](VECTRA-011-quality-assurance.md).

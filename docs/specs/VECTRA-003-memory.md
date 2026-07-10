@@ -1,45 +1,45 @@
-# VECTRA-003: Memory
+# VECTRA-003: Память
 
-**Status:** Draft · **Version:** 0.1.0 · **Normative:** Yes
+**Статус:** Черновик · **Версия:** 0.1.0 · **Нормативный:** Да
 
-## Purpose
+## Назначение
 
-Define external memory that permits reliable cold-start recovery.
+Определить внешнюю память, обеспечивающую надёжное восстановление с холодного старта.
 
-## Definitions
+## Определения
 
-- **Working memory:** active task state, disposable after closure.
-- **Permanent memory:** current validated facts and operating constraints.
-- **Historical memory:** append-only record of prior states and events.
-- **Provenance:** origin, author, time, and validation status of knowledge.
-- **Memory debt:** stale, duplicated, unowned, or unverifiable knowledge.
+- **Рабочая память:** состояние активной задачи, удаляемое после закрытия.
+- **Постоянная память:** текущие проверенные факты и операционные ограничения.
+- **Историческая память:** запись только для добавления о прошлых состояниях и событиях.
+- **Происхождение:** источник, автор, время и статус валидации знания.
+- **Долг памяти:** устаревшие, дублированные, бесхозные или непроверяемые знания.
 
-## Rules
+## Правила
 
-Memory MUST live outside model context, identify its scope, and carry provenance. Current facts MUST NOT be inferred from historical records without revalidation. Secrets MUST be referenced by secure locator, never copied into memory. Rejected hypotheses MUST NOT enter permanent memory as fact. A task cannot become `closed` until reusable learning is either stored or explicitly classified as non-durable.
+Память ОБЯЗАНА находиться вне контекста модели, обозначать свои границы и нести происхождение. Текущие факты ЗАПРЕЩЕНО выводить из исторических записей без повторной валидации. Секреты ОБЯЗАНЫ адресоваться безопасным локатором и никогда не копироваться в память. Отклонённые гипотезы ЗАПРЕЩЕНО заносить в постоянную память как факт. Задача не может стать `closed`, пока переиспользуемое знание не сохранено или явно классифицировано как недолговечное.
 
-## Responsibilities
+## Ответственность
 
-Executors propose memory updates. Reviewers validate consequential facts. The memory manager removes duplication and stale entries. Owners define retention and confidentiality policy.
+Исполнители предлагают обновления памяти. Ревьюеры валидируют существенные факты. Менеджер памяти удаляет дублирование и устаревшие записи. Владельцы определяют политику хранения и конфиденциальности.
 
-## Workflow
+## Процесс
 
-Capture candidate learning during execution; classify it as working, permanent, or historical; validate source and scope; merge into the canonical location; link the originating task or decision; mark superseded knowledge; then verify that a cold reader can apply it. Review permanent memory on release and after incident recovery.
+Фиксировать кандидатное знание во время выполнения; классифицировать его как рабочее, постоянное или историческое; проверять источник и границы; сливать в каноническое место; связывать с породившей задачей или решением; помечать замещённое знание; затем убеждаться, что читатель на холодном старте может его применить. Пересматривать постоянную память при релизе и после восстановления от инцидента.
 
-## Example
+## Пример
 
-“API returned 500 once” belongs in task evidence. “Provider limits payloads to 10 MB, verified against contract version X” belongs in permanent constraints. The outage timeline belongs in history.
+«API один раз вернул 500» относится к свидетельствам задачи. «Провайдер ограничивает полезную нагрузку 10 МБ, проверено по версии контракта X» относится к постоянным ограничениям. Хронология сбоя относится к истории.
 
-## Anti-patterns
+## Антипаттерны
 
-- Chat transcripts as canonical memory.
-- One ever-growing `memory.md` with no ownership or expiry.
-- Copying the same rule into several files.
+- Стенограммы переписки как каноническая память.
+- Единственный постоянно растущий `memory.md` без владельца и срока действия.
+- Копирование одного и того же правила в несколько файлов.
 
-## Best practices
+## Лучшие практики
 
-Store facts closest to their subject, keep summaries navigational, add `last_verified` to volatile facts, and test memory with a new-agent recovery exercise.
+Хранить факты как можно ближе к их предмету, оставлять сводки навигационными, добавлять `last_verified` к изменчивым фактам и проверять память упражнением по восстановлению новым агентом.
 
-## Related specifications
+## Связанные спецификации
 
-[VECTRA-004](VECTRA-004-decisions.md), [VECTRA-009](VECTRA-009-context-engineering.md), and [VECTRA-012](VECTRA-012-knowledge-management.md).
+[VECTRA-004](VECTRA-004-decisions.md), [VECTRA-009](VECTRA-009-context-engineering.md) и [VECTRA-012](VECTRA-012-knowledge-management.md).
