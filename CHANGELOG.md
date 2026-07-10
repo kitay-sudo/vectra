@@ -4,7 +4,11 @@ All notable changes follow Keep a Changelog. Versions follow Semantic Versioning
 
 ## [Unreleased]
 
-No changes recorded.
+### Changed
+
+- Reworked `README.md` into an engineer-facing entry point with copy-ready flows for existing projects, new projects, and context recovery.
+- Required repository discovery before an owner interview when adopting an existing project.
+- Clarified how verified problems, completed work, decisions, and reusable learning become durable project memory.
 
 ## [0.1.0] - 2026-07-10
 
