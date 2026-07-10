@@ -38,10 +38,11 @@ document.querySelectorAll('[data-copy]').forEach((button) => {
     }
 
     if (copied) {
-      button.firstChild.textContent = 'Скопировано ';
+      const label = button.querySelector('.copy-label');
+      label.textContent = 'Скопировано';
       toast.classList.add('show');
       window.setTimeout(() => {
-        button.firstChild.textContent = 'Скопировать ';
+        label.textContent = 'Скопировать';
         toast.classList.remove('show');
       }, 1600);
     } else {

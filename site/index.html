@@ -3,28 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Vectra — операционная система для долгих проектов с AI-агентами.">
+  <meta name="description" content="Vectra — открытый операционный framework для инженеров, работающих с AI-агентами.">
   <meta name="theme-color" content="#ffffff">
   <title>Vectra — AI Project Operating System</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h3a3 3 0 0 0 3-3V8a3 3 0 0 1 3-3"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7h-6V1M4 17h6v6"/><path d="M18.5 4.5A9 9 0 0 0 4 9M5.5 19.5A9 9 0 0 0 20 15"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z"/><path d="M14 2v5h5M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6h7l2 2h9v11H3z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7.4A5.8 5.8 0 0 0 19.3 3 5.4 5.4 0 0 0 19.1 0S17.9-.4 15 1.5a13.4 13.4 0 0 0-6 0C6.1-.4 4.9 0 4.9 0a5.4 5.4 0 0 0-.2 3A5.8 5.8 0 0 0 3.2 7c0 5.8 3.5 7 6.8 7.4A4.8 4.8 0 0 0 9 18v4"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+  </svg>
   <header class="nav shell">
     <a class="brand" href="#top" aria-label="Vectra, на главную">Vectra<span>.</span></a>
     <nav aria-label="Основная навигация">
       <a href="#how">Как работает</a>
+      <a href="#engineers">Инженерам</a>
       <a href="#start">Начать</a>
-      <a href="#memory">Память</a>
     </nav>
     <a class="button button-small" href="#start">Запустить</a>
   </header>
 
   <main id="top">
     <section class="hero shell">
-      <div class="eyebrow"><span></span> Open framework · v0.1.0</div>
+      <div class="eyebrow"><span></span> Open framework for engineers · v0.1.0</div>
       <h1>Проект помнит.<br>Агент продолжает.</h1>
-      <p class="lead">Vectra превращает работу с AI из бесконечных объяснений в понятный инженерный процесс — с контекстом, проверками, решениями и памятью внутри проекта.</p>
+      <p class="lead">Vectra — операционная система для инженеров, которые строят проекты вместе с AI-агентами. Она превращает разрозненные чаты в воспроизводимый процесс с контекстом, проверками, решениями и памятью внутри репозитория.</p>
       <div class="actions">
         <a class="button" href="#start">Начать с Vectra</a>
         <a class="text-link" href="#how">Посмотреть процесс <span>↘</span></a>
@@ -42,6 +58,8 @@
       </div>
     </section>
 
+    <div class="section-divider shell" aria-hidden="true"><span>01</span><i></i><b>Почему Vectra</b></div>
+
     <section class="statement shell">
       <p class="kicker">Зачем</p>
       <h2>Чаты заканчиваются. Знания остаются в проекте.</h2>
@@ -51,6 +69,8 @@
       </div>
     </section>
 
+    <div class="section-divider shell" aria-hidden="true"><span>02</span><i></i><b>Рабочий цикл</b></div>
+
     <section id="how" class="section shell">
       <div class="section-head">
         <p class="kicker">Как работает</p>
@@ -58,28 +78,28 @@
       </div>
       <div class="feature-grid">
         <article class="feature dark">
-          <div class="feature-number">01</div>
+          <div class="feature-top"><div class="feature-number">01</div><svg class="icon icon-box"><use href="#i-search"/></svg></div>
           <div>
             <h3>Изучить</h3>
             <p>Агент сначала исследует код, документацию, тесты, Git-историю и известные проблемы.</p>
           </div>
         </article>
         <article class="feature">
-          <div class="feature-number">02</div>
+          <div class="feature-top"><div class="feature-number">02</div><svg class="icon icon-box"><use href="#i-route"/></svg></div>
           <div>
             <h3>Согласовать</h3>
             <p>Цель, ограничения, полномочия и критерии готовности становятся явными.</p>
           </div>
         </article>
         <article class="feature">
-          <div class="feature-number">03</div>
+          <div class="feature-top"><div class="feature-number">03</div><svg class="icon icon-box"><use href="#i-terminal"/></svg></div>
           <div>
             <h3>Сделать</h3>
             <p>Работа идёт маленькими изменениями: план, выполнение, проверка и ревью.</p>
           </div>
         </article>
         <article class="feature accent">
-          <div class="feature-number">04</div>
+          <div class="feature-top"><div class="feature-number">04</div><svg class="icon icon-box"><use href="#i-database"/></svg></div>
           <div>
             <h3>Запомнить</h3>
             <p>Решения, проблемы, результаты и следующий шаг сохраняются в файлах проекта.</p>
@@ -88,18 +108,47 @@
       </div>
     </section>
 
+    <div class="section-divider shell" aria-hidden="true"><span>03</span><i></i><b>Инженерная модель</b></div>
+
+    <section id="engineers" class="section engineers shell">
+      <div class="section-head engineering-head">
+        <p class="kicker">Спроектировано для инженеров</p>
+        <h2>Состояние проекта важнее состояния чата.</h2>
+        <p class="section-intro">Vectra не заменяет Git, тесты, issue tracker или документацию. Она связывает их в единый протокол работы агента: что прочитать, что разрешено изменить, чем доказать результат и что сохранить после завершения.</p>
+      </div>
+
+      <div class="state-flow" aria-label="Жизненный цикл задачи">
+        <div><small>01</small><strong>Intake</strong><p>Зафиксировать ожидаемый результат, границы и владельца решения.</p></div>
+        <div><small>02</small><strong>Context</strong><p>Проверить код, документацию, решения, тесты и фактическое состояние.</p></div>
+        <div><small>03</small><strong>Plan</strong><p>Выбрать минимальное изменение, критерии приёмки и способ отката.</p></div>
+        <div><small>04</small><strong>Execute</strong><p>Выполнить ограниченный шаг и оставить воспроизводимый checkpoint.</p></div>
+        <div><small>05</small><strong>Validate</strong><p>Сопоставить каждый критерий с тестом, ревью или другим evidence.</p></div>
+        <div><small>06</small><strong>Synchronize</strong><p>Обновить задачу, решения и память до перехода к следующей итерации.</p></div>
+      </div>
+
+      <div class="engineering-notes">
+        <article><div class="note-top"><span>Контроль</span><svg class="icon"><use href="#i-shield"/></svg></div><h3>Полномочия записаны</h3><p>Агент знает, где может действовать самостоятельно, а где обязан остановиться и запросить решение инженера.</p></article>
+        <article><div class="note-top"><span>Качество</span><svg class="icon"><use href="#i-check"/></svg></div><h3>Готовность доказуема</h3><p>Задача закрывается не по уверенности агента, а после выполнения измеримых критериев и сохранения evidence.</p></article>
+        <article><div class="note-top"><span>Continuity</span><svg class="icon"><use href="#i-refresh"/></svg></div><h3>Handoff без пересказа</h3><p>Новый агент восстанавливает состояние по репозиторию: активная задача, принятые решения, проблемы и точный следующий шаг.</p></article>
+      </div>
+    </section>
+
+    <div class="section-divider shell" aria-hidden="true"><span>04</span><i></i><b>Память и handoff</b></div>
+
     <section id="memory" class="memory shell">
       <div class="memory-title">
         <p class="kicker">Память проекта</p>
         <h2>Не зависит от одного агента.</h2>
       </div>
       <div class="memory-list">
-        <div><code>PROJECT.md</code><p>Цель, границы и полномочия</p></div>
-        <div><code>TASK.md</code><p>Работа, проверки и следующий шаг</p></div>
-        <div><code>DECISION.md</code><p>Решения и отвергнутые варианты</p></div>
-        <div><code>MEMORY.md</code><p>Факты, проблемы и накопленный опыт</p></div>
+        <div><svg class="icon"><use href="#i-file"/></svg><code>PROJECT.md</code><p>Цель, границы и полномочия</p></div>
+        <div><svg class="icon"><use href="#i-file"/></svg><code>TASK.md</code><p>Работа, проверки и следующий шаг</p></div>
+        <div><svg class="icon"><use href="#i-file"/></svg><code>DECISION.md</code><p>Решения и отвергнутые варианты</p></div>
+        <div><svg class="icon"><use href="#i-database"/></svg><code>MEMORY.md</code><p>Факты, проблемы и накопленный опыт</p></div>
       </div>
     </section>
+
+    <div class="section-divider shell" aria-hidden="true"><span>05</span><i></i><b>Запуск</b></div>
 
     <section id="start" class="section start shell">
       <div class="section-head">
@@ -107,13 +156,13 @@
         <h2>Скопируйте. Отправьте агенту.</h2>
       </div>
       <div class="prompt-tabs" role="tablist" aria-label="Выберите сценарий">
-        <button class="tab active" role="tab" aria-selected="true" aria-controls="prompt-existing" data-tab="existing">Текущий проект</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="prompt-new" data-tab="new">Новый проект</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="prompt-resume" data-tab="resume">Продолжить работу</button>
+        <button class="tab active" role="tab" aria-selected="true" aria-controls="prompt-existing" data-tab="existing"><svg class="icon"><use href="#i-folder"/></svg>Текущий проект</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="prompt-new" data-tab="new"><svg class="icon"><use href="#i-plus"/></svg>Новый проект</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="prompt-resume" data-tab="resume"><svg class="icon"><use href="#i-refresh"/></svg>Продолжить работу</button>
       </div>
 
       <div class="prompt-card active" id="prompt-existing" data-panel="existing" role="tabpanel">
-        <div class="prompt-top"><span>Подключить существующий проект</span><button class="copy" data-copy="existing">Скопировать <span>⌘C</span></button></div>
+        <div class="prompt-top"><span>Подключить существующий проект</span><button class="copy" data-copy="existing"><svg class="icon"><use href="#i-copy"/></svg><span class="copy-label">Скопировать</span><span>⌘C</span></button></div>
         <pre><code id="existing">Подключи этот проект к Vectra 0.1.0.
 
 До вопросов изучи репозиторий: структуру, документацию, реализацию, тесты, Git-историю и известные проблемы. Пока ничего не изменяй.
@@ -122,7 +171,7 @@
       </div>
 
       <div class="prompt-card" id="prompt-new" data-panel="new" role="tabpanel" hidden>
-        <div class="prompt-top"><span>Создать новый проект</span><button class="copy" data-copy="new">Скопировать <span>⌘C</span></button></div>
+        <div class="prompt-top"><span>Создать новый проект</span><button class="copy" data-copy="new"><svg class="icon"><use href="#i-copy"/></svg><span class="copy-label">Скопировать</span><span>⌘C</span></button></div>
         <pre><code id="new">Создай новый проект по Vectra 0.1.0.
 
 Проведи интервью: задавай по одному вопросу о результате, пользователях, ограничениях, рисках, приоритетах и полномочиях. Предлагай конкретные варианты.
@@ -131,7 +180,7 @@
       </div>
 
       <div class="prompt-card" id="prompt-resume" data-panel="resume" role="tabpanel" hidden>
-        <div class="prompt-top"><span>Продолжить без старого чата</span><button class="copy" data-copy="resume">Скопировать <span>⌘C</span></button></div>
+        <div class="prompt-top"><span>Продолжить без старого чата</span><button class="copy" data-copy="resume"><svg class="icon"><use href="#i-copy"/></svg><span class="copy-label">Скопировать</span><span>⌘C</span></button></div>
         <pre><code id="resume">Продолжи этот проект по Vectra.
 
 Прочитай PROJECT.md, MEMORY.md, активные задачи, решения и текущее состояние репозитория. Определи приоритетную готовую задачу, её этап, следующий разрешённый шаг и способ проверки.
@@ -145,14 +194,18 @@
         <p class="kicker">Начните с одного файла</p>
         <h2>Сделайте AI частью инженерного процесса.</h2>
       </div>
-      <a class="button button-invert" href="#start">Скопировать команду</a>
+      <a class="button button-invert" href="#start">Скопировать команду <svg class="icon"><use href="#i-arrow"/></svg></a>
     </section>
   </main>
 
   <footer class="footer shell">
-    <a class="brand" href="#top">Vectra<span>.</span></a>
-    <p>AI Project Operating System · v0.1.0</p>
-    <a href="#top">Наверх ↑</a>
+    <div class="footer-project"><a class="brand" href="#top">Vectra<span>.</span></a><p>AI Project Operating System · v0.1.0</p></div>
+    <div class="author">
+      <span>Автор · Kitay9</span>
+      <a href="https://t.me/kitay9" target="_blank" rel="noreferrer"><svg class="icon"><use href="#i-send"/></svg>Telegram ↗</a>
+      <a href="https://github.com/kitay-sudo" target="_blank" rel="noreferrer"><svg class="icon"><use href="#i-github"/></svg>GitHub ↗</a>
+    </div>
+    <a class="to-top" href="#top">Наверх ↑</a>
   </footer>
   <div class="toast" role="status" aria-live="polite">Скопировано</div>
   <script src="script.js"></script>

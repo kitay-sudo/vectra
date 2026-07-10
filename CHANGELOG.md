@@ -14,6 +14,7 @@ All notable changes follow Keep a Changelog. Versions follow Semantic Versioning
 
 - Responsive black-and-white landing page with modular workflow explanation, project-memory overview, and copy-ready starter commands.
 - GitHub Pages deployment workflow for the static site.
+- Engineer-focused lifecycle section, structured section dividers, author links, and a consistent inline SVG icon system.
 
 ## [0.1.0] - 2026-07-10
 
