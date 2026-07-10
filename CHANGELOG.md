@@ -10,6 +10,11 @@ All notable changes follow Keep a Changelog. Versions follow Semantic Versioning
 - Required repository discovery before an owner interview when adopting an existing project.
 - Clarified how verified problems, completed work, decisions, and reusable learning become durable project memory.
 
+### Added
+
+- Responsive black-and-white landing page with modular workflow explanation, project-memory overview, and copy-ready starter commands.
+- GitHub Pages deployment workflow for the static site.
+
 ## [0.1.0] - 2026-07-10
 
 ### Added

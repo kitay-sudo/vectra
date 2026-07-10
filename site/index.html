@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vectra — операционная система для долгих проектов с AI-агентами.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Vectra — AI Project Operating System</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav shell">
+    <a class="brand" href="#top" aria-label="Vectra, на главную">Vectra<span>.</span></a>
+    <nav aria-label="Основная навигация">
+      <a href="#how">Как работает</a>
+      <a href="#start">Начать</a>
+      <a href="#memory">Память</a>
+    </nav>
+    <a class="button button-small" href="#start">Запустить</a>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="eyebrow"><span></span> Open framework · v0.1.0</div>
+      <h1>Проект помнит.<br>Агент продолжает.</h1>
+      <p class="lead">Vectra превращает работу с AI из бесконечных объяснений в понятный инженерный процесс — с контекстом, проверками, решениями и памятью внутри проекта.</p>
+      <div class="actions">
+        <a class="button" href="#start">Начать с Vectra</a>
+        <a class="text-link" href="#how">Посмотреть процесс <span>↘</span></a>
+      </div>
+      <div class="hero-card" aria-label="Цикл работы Vectra">
+        <div class="loop-step active"><b>01</b><span>Контекст</span></div>
+        <div class="loop-line"></div>
+        <div class="loop-step"><b>02</b><span>План</span></div>
+        <div class="loop-line"></div>
+        <div class="loop-step"><b>03</b><span>Работа</span></div>
+        <div class="loop-line"></div>
+        <div class="loop-step"><b>04</b><span>Проверка</span></div>
+        <div class="loop-line"></div>
+        <div class="loop-step"><b>05</b><span>Память</span></div>
+      </div>
+    </section>
+
+    <section class="statement shell">
+      <p class="kicker">Зачем</p>
+      <h2>Чаты заканчиваются.<br>Знания остаются в проекте.</h2>
+      <div class="statement-copy">
+        <p>Обычный промпт объясняет агенту задачу один раз. Vectra описывает, как проект живёт постоянно.</p>
+        <p>Новый агент читает состояние проекта, понимает сделанное и продолжает с нужного места — без восстановления всей переписки.</p>
+      </div>
+    </section>
+
+    <section id="how" class="section shell">
+      <div class="section-head">
+        <p class="kicker">Как работает</p>
+        <h2>Один цикл.<br>Никакой магии.</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature dark">
+          <div class="feature-number">01</div>
+          <div>
+            <h3>Изучить</h3>
+            <p>Агент сначала исследует код, документацию, тесты, Git-историю и известные проблемы.</p>
+          </div>
+        </article>
+        <article class="feature">
+          <div class="feature-number">02</div>
+          <div>
+            <h3>Согласовать</h3>
+            <p>Цель, ограничения, полномочия и критерии готовности становятся явными.</p>
+          </div>
+        </article>
+        <article class="feature">
+          <div class="feature-number">03</div>
+          <div>
+            <h3>Сделать</h3>
+            <p>Работа идёт маленькими изменениями: план, выполнение, проверка и ревью.</p>
+          </div>
+        </article>
+        <article class="feature accent">
+          <div class="feature-number">04</div>
+          <div>
+            <h3>Запомнить</h3>
+            <p>Решения, проблемы, результаты и следующий шаг сохраняются в файлах проекта.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="memory" class="memory shell">
+      <div class="memory-title">
+        <p class="kicker">Память проекта</p>
+        <h2>Не зависит<br>от одного агента.</h2>
+      </div>
+      <div class="memory-list">
+        <div><code>PROJECT.md</code><p>Цель, границы и полномочия</p></div>
+        <div><code>TASK.md</code><p>Работа, проверки и следующий шаг</p></div>
+        <div><code>DECISION.md</code><p>Решения и отвергнутые варианты</p></div>
+        <div><code>MEMORY.md</code><p>Факты, проблемы и накопленный опыт</p></div>
+      </div>
+    </section>
+
+    <section id="start" class="section start shell">
+      <div class="section-head">
+        <p class="kicker">Быстрый старт</p>
+        <h2>Скопируйте.<br>Отправьте агенту.</h2>
+      </div>
+      <div class="prompt-tabs" role="tablist" aria-label="Выберите сценарий">
+        <button class="tab active" role="tab" aria-selected="true" aria-controls="prompt-existing" data-tab="existing">Текущий проект</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="prompt-new" data-tab="new">Новый проект</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="prompt-resume" data-tab="resume">Продолжить работу</button>
+      </div>
+
+      <div class="prompt-card active" id="prompt-existing" data-panel="existing" role="tabpanel">
+        <div class="prompt-top"><span>Подключить существующий проект</span><button class="copy" data-copy="existing">Скопировать <span>⌘C</span></button></div>
+        <pre><code id="existing">Подключи этот проект к Vectra 0.1.0.
+
+До вопросов изучи репозиторий: структуру, документацию, реализацию, тесты, Git-историю и известные проблемы. Пока ничего не изменяй.
+
+Покажи подтверждённые факты, неизвестное и риски. Затем задавай мне по одному вопросу только о том, что нельзя надёжно узнать из проекта. Подготовь PROJECT.md и MEMORY.md на моё подтверждение.</code></pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-new" data-panel="new" role="tabpanel" hidden>
+        <div class="prompt-top"><span>Создать новый проект</span><button class="copy" data-copy="new">Скопировать <span>⌘C</span></button></div>
+        <pre><code id="new">Создай новый проект по Vectra 0.1.0.
+
+Проведи интервью: задавай по одному вопросу о результате, пользователях, ограничениях, рисках, приоритетах и полномочиях. Предлагай конкретные варианты.
+
+Затем подготовь PROJECT.md и MEMORY.md. После моего подтверждения создай первый TASK.md с измеримыми критериями и выполни его по циклу Vectra.</code></pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-resume" data-panel="resume" role="tabpanel" hidden>
+        <div class="prompt-top"><span>Продолжить без старого чата</span><button class="copy" data-copy="resume">Скопировать <span>⌘C</span></button></div>
+        <pre><code id="resume">Продолжи этот проект по Vectra.
+
+Прочитай PROJECT.md, MEMORY.md, активные задачи, решения и текущее состояние репозитория. Определи приоритетную готовую задачу, её этап, следующий разрешённый шаг и способ проверки.
+
+Продолжай только в рамках записанных полномочий. Перед завершением обнови состояние задачи и память проекта.</code></pre>
+      </div>
+    </section>
+
+    <section class="cta shell">
+      <div>
+        <p class="kicker">Начните с одного файла</p>
+        <h2>Сделайте AI частью<br>инженерного процесса.</h2>
+      </div>
+      <a class="button button-invert" href="#start">Скопировать команду</a>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <a class="brand" href="#top">Vectra<span>.</span></a>
+    <p>AI Project Operating System · v0.1.0</p>
+    <a href="#top">Наверх ↑</a>
+  </footer>
+  <div class="toast" role="status" aria-live="polite">Скопировано</div>
+  <script src="script.js"></script>
+</body>
+</html>
