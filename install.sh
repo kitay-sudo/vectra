@@ -30,7 +30,12 @@ Vectra — установка рабочих документов.
   --force               Перезаписывать существующие файлы.
   --help                Показать эту справку.
 
-Переменные окружения: VECTRA_REPO, VECTRA_REF.
+После установки правила Vectra попадают в AGENTS.md (и CLAUDE.md для
+Claude Code) в корне проекта, поэтому в новой сессии агент следует им
+автоматически, без вставки команд. Существующий агентский файл не
+перезаписывается — блок дописывается между маркерами vectra.
+
+Переменные окружения: VECTRA_REPO, VECTRA_REF, VECTRA_BASE.
 EOF
 }
 
@@ -81,7 +86,7 @@ else
 	die "нужен curl или wget"
 fi
 
-BASE="https://raw.githubusercontent.com/${REPO}/${REF}"
+BASE="${VECTRA_BASE:-https://raw.githubusercontent.com/${REPO}/${REF}}"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT INT TERM
 
@@ -129,6 +134,34 @@ for dir in tasks decisions; do
 	fi
 done
 
+# Точка входа. Агенты сами читают AGENTS.md (Cursor, Codex, Claude Code) или
+# CLAUDE.md (Claude Code) при старте сессии. Дописываем блок Vectra между
+# маркерами, не перетирая существующий файл; повторный запуск ничего не дублирует.
+inject_block() { # $1=файл  $2=payload  $3=подпись
+	if [ -f "$1" ]; then
+		if grep -q 'vectra:start' "$1" 2>/dev/null; then
+			printf '  ~ %-28s блок Vectra уже есть\n' "$3"
+			return
+		fi
+		printf '\n' >>"$1"
+		cat "$2" >>"$1"
+		printf '  ± %-28s дополнен блоком Vectra\n' "$3"
+	else
+		cat "$2" >"$1"
+		printf '  + %s\n' "$3"
+	fi
+}
+
+fetch "${BASE}/install/bootstrap.md" >"$TMP/bootstrap" || die "не удалось скачать install/bootstrap.md"
+[ -s "$TMP/bootstrap" ] || die "пустой файл: install/bootstrap.md"
+printf '%s\n' \
+	'<!-- vectra:start · блок добавлен установщиком Vectra -->' \
+	'@AGENTS.md' \
+	'<!-- vectra:end -->' >"$TMP/claude"
+
+inject_block "${TARGET%/}/AGENTS.md" "$TMP/bootstrap" "AGENTS.md"
+inject_block "${TARGET%/}/CLAUDE.md" "$TMP/claude" "CLAUDE.md"
+
 version="$(cat "${TARGET%/}/vectra/VERSION" 2>/dev/null || echo "?")"
 
 printf '\n  Установлено файлов: %s, пропущено: %s. Vectra %s.\n' "$installed" "$skipped" "$version"
@@ -138,9 +171,12 @@ cat <<'EOF'
   CHANGELOG.md, ROADMAP.md, CONTRIBUTING.md — это описание стандарта,
   а не рабочие документы проекта.
 
+  Правила Vectra теперь в AGENTS.md и CLAUDE.md — агент подхватывает их
+  сам в начале новой сессии. Отдельную команду вставлять не нужно.
+
   Дальше:
     1. Заполните PROJECT.md вместе с агентом.
-    2. Дайте агенту прочитать vectra/AGENTS.md.
+    2. В новой сессии просто опишите задачу — агент уже работает по Vectra.
     3. Первую задачу заведите как tasks/TASK-001.md
        из шаблона vectra/templates/TASK.md.
 

@@ -155,7 +155,7 @@
       <div class="section-head">
         <p class="kicker">Установка</p>
         <h2>Одна строка. Только рабочие документы.</h2>
-        <p class="section-intro">Команда приносит в проект контракт, память, правила агента и шаблоны записей. Диаграммы, лендинг, примеры и спецификации остаются здесь — они описывают стандарт, а не участвуют в работе.</p>
+        <p class="section-intro">Команда приносит в проект контракт, память, правила агента и шаблоны записей. Диаграммы, лендинг, примеры и спецификации остаются здесь — они описывают стандарт, а не участвуют в работе. Правила попадают в <code>AGENTS.md</code> и <code>CLAUDE.md</code>, поэтому в новой сессии агент следует Vectra сам — без вставки команд.</p>
       </div>
 
       <div class="prompt-card" id="install-card">
@@ -172,9 +172,10 @@
         <div style="max-width:840px">
           <p class="kicker">Попадает в проект</p>
           <div class="memory-list">
+            <div><svg class="icon"><use href="#i-check"/></svg><code>AGENTS.md · CLAUDE.md</code><p>Точка входа. Агент читает их сам в начале сессии.</p></div>
             <div><svg class="icon"><use href="#i-file"/></svg><code>PROJECT.md</code><p>Цели, ограничения, полномочия, критерии готовности.</p></div>
             <div><svg class="icon"><use href="#i-database"/></svg><code>MEMORY.md</code><p>Проверенные знания и повторяющиеся уроки.</p></div>
-            <div><svg class="icon"><use href="#i-shield"/></svg><code>vectra/AGENTS.md</code><p>Правила агента: цикл, полномочия, приёмка.</p></div>
+            <div><svg class="icon"><use href="#i-shield"/></svg><code>vectra/AGENTS.md</code><p>Полные правила: цикл, полномочия, приёмка.</p></div>
             <div><svg class="icon"><use href="#i-folder"/></svg><code>tasks/ · decisions/</code><p>Записи задач и решений плюс их шаблоны.</p></div>
           </div>
         </div>

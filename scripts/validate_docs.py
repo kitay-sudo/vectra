@@ -104,12 +104,24 @@ def check_manifest(errors: list[str]) -> int:
             errors.append(f"install/manifest.txt:{number}: назначение повторяется: {destination}")
         destinations.add(destination)
 
+    bootstrap = ROOT / "install/bootstrap.md"
+    if not bootstrap.exists():
+        errors.append("install/bootstrap.md отсутствует")
+    else:
+        text = bootstrap.read_text(encoding="utf-8")
+        for marker in ("vectra:start", "vectra:end"):
+            if marker not in text:
+                errors.append(f"install/bootstrap.md: нет маркера {marker}")
+
     for script in ("install.sh", "install.ps1"):
         path = ROOT / script
         if not path.exists():
             errors.append(f"{script} отсутствует")
-        elif "install/manifest.txt" not in path.read_text(encoding="utf-8"):
-            errors.append(f"{script}: не читает install/manifest.txt")
+            continue
+        script_text = path.read_text(encoding="utf-8")
+        for needed in ("install/manifest.txt", "install/bootstrap.md"):
+            if needed not in script_text:
+                errors.append(f"{script}: не читает {needed}")
 
     return entries
 

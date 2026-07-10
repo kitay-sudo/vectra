@@ -31,7 +31,8 @@ $ErrorActionPreference = 'Stop'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 $repo = if ($env:VECTRA_REPO) { $env:VECTRA_REPO } else { 'kitay-sudo/vectra' }
-$base = "https://raw.githubusercontent.com/$repo/$Ref"
+$base = if ($env:VECTRA_BASE) { $env:VECTRA_BASE } else { "https://raw.githubusercontent.com/$repo/$Ref" }
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 
 if (-not (Test-Path -LiteralPath $Dir -PathType Container)) {
     throw "каталог не найден: $Dir"
@@ -100,6 +101,35 @@ foreach ($dir in @('tasks', 'decisions')) {
     }
 }
 
+# Точка входа. Claude Code читает CLAUDE.md (и AGENTS.md) при старте сессии,
+# Cursor/Codex — AGENTS.md. Дописываем блок Vectra между маркерами, не
+# перетирая существующий файл; повторный запуск ничего не дублирует.
+# UTF-8 без BOM через .NET: Add-Content -Encoding UTF8 в PS 5.1 ставит BOM.
+function Add-VectraBlock([string]$File, [string]$Text, [string]$Label) {
+    if (Test-Path -LiteralPath $File) {
+        if (Select-String -LiteralPath $File -Pattern 'vectra:start' -Quiet) {
+            Write-Host ("  ~ {0,-28} блок Vectra уже есть" -f $Label)
+            return
+        }
+        [IO.File]::AppendAllText($File, "`n" + $Text, $utf8NoBom)
+        Write-Host ("  ± {0,-28} дополнен блоком Vectra" -f $Label)
+    }
+    else {
+        [IO.File]::WriteAllText($File, $Text, $utf8NoBom)
+        Write-Host "  + $Label"
+    }
+}
+
+# Декодируем сырые байты как UTF-8, а не .Content: строка .Content зависит от
+# заголовка charset сервера и на зеркалах без него ломает кириллицу.
+$bootstrapBytes = (Get-VectraFile 'install/bootstrap.md').RawContentStream.ToArray()
+if ($bootstrapBytes.Length -eq 0) { throw "пустой файл: install/bootstrap.md" }
+$bootstrap = $utf8NoBom.GetString($bootstrapBytes)
+$claudeBlock = "<!-- vectra:start · блок добавлен установщиком Vectra -->`n@AGENTS.md`n<!-- vectra:end -->`n"
+
+Add-VectraBlock (Join-Path $target 'AGENTS.md') $bootstrap 'AGENTS.md'
+Add-VectraBlock (Join-Path $target 'CLAUDE.md') $claudeBlock 'CLAUDE.md'
+
 $versionFile = Join-Path $target 'vectra/VERSION'
 $version = if (Test-Path -LiteralPath $versionFile) { (Get-Content -LiteralPath $versionFile -Raw).Trim() } else { '?' }
 
@@ -111,9 +141,12 @@ Write-Host @"
   CHANGELOG.md, ROADMAP.md, CONTRIBUTING.md — это описание стандарта,
   а не рабочие документы проекта.
 
+  Правила Vectra теперь в AGENTS.md и CLAUDE.md — агент подхватывает их
+  сам в начале новой сессии. Отдельную команду вставлять не нужно.
+
   Дальше:
     1. Заполните PROJECT.md вместе с агентом.
-    2. Дайте агенту прочитать vectra/AGENTS.md.
+    2. В новой сессии просто опишите задачу — агент уже работает по Vectra.
     3. Первую задачу заведите как tasks/TASK-001.md
        из шаблона vectra/templates/TASK.md.
 
